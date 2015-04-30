@@ -14,7 +14,7 @@
 **  for more details.
 **  You should have received a copy of the GNU General Public License along
 **  with this program; if not, write to the Free Software Foundation,
-**  Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA 
+**  Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA
 **
 ***************************************************************************************/
 
@@ -59,7 +59,7 @@ void Ivy::resetSettings()
 
 
 void Ivy::seed(const Vector3d &seedPos)
-{	
+{
 	BasicMesh::reset();
 
 	roots.clear();
@@ -100,7 +100,7 @@ void Ivy::grow()
 
 	float local_maxFloatLength = Common::mesh.boundingSphereRadius * maxFloatLength;
 
-	
+
 	//normalize weights of influence
 	float sum = primaryWeight + randomWeight + adhesionWeight;
 
@@ -125,12 +125,12 @@ void Ivy::grow()
 
 			//primary vector = weighted sum of previous grow vectors
 			Vector3d primaryVector = root->nodes.back().primaryDir;
-			
+
 			//random influence plus a little upright vector
 			Vector3d randomVector = Vector3d::getNormalized( Vector3d::getRandomized() + Vector3d(0.0f, 0.2f, 0.0f) );
 
 			//adhesion influence to the nearest triangle = weighted sum of previous adhesion vectors
-			Vector3d adhesionVector = computeAdhesion(root->nodes.back().pos);	
+			Vector3d adhesionVector = computeAdhesion(root->nodes.back().pos);
 
 			//compute grow vector
 			Vector3d growVector = local_ivySize * (primaryVector * primaryWeight + randomVector * randomWeight + adhesionVector * adhesionWeight);
@@ -139,14 +139,14 @@ void Ivy::grow()
 		//gravity influence
 
 			//compute gravity vector
-			Vector3d gravityVector = local_ivySize * Vector3d(0.0f, -1.0f, 0.0f) * gravityWeight; 
+			Vector3d gravityVector = local_ivySize * Vector3d(0.0f, -1.0f, 0.0f) * gravityWeight;
 
 			//gravity depends on the floating length
 			gravityVector *= pow(root->nodes.back().floatingLength / local_maxFloatLength, 0.7f);
 
 
 		//next possible ivy node
-	
+
 			//climbing state of that ivy node, will be set during collision detection
 			bool climbing;
 
@@ -158,7 +158,7 @@ void Ivy::grow()
 
 			//update grow vector due to a changed newPos
 			growVector = newPos - root->nodes.back().pos - gravityVector;
-	
+
 
 		//create next ivy node
 			IvyNode tmpNode;
@@ -264,7 +264,7 @@ Vector3d Ivy::computeAdhesion(const Vector3d &pos)
 
 		//compute barycentric coordinates of p0
 		float alpha, beta, gamma;
-			
+
 		if (Vector3d::getBarycentricCoordinates(t->v0->pos, t->v1->pos, t->v2->pos, p0, alpha, beta, gamma))
 		{
 			//compute distance
@@ -276,7 +276,7 @@ Vector3d Ivy::computeAdhesion(const Vector3d &pos)
 				minDistance = distance;
 
 				adhesionVector = Vector3d::getNormalized(p0 - pos);
-					
+
 				//distance dependent adhesion vector
 				adhesionVector *= 1.0f - distance / local_maxAdhesionDistance;
 			}
@@ -294,7 +294,7 @@ bool Ivy::computeCollision(const Vector3d &oldPos, Vector3d &newPos, bool &climb
 	climbing = false;
 
 	bool intersection;
-	
+
 	int deadlockCounter = 0;
 
 	do
@@ -316,7 +316,7 @@ bool Ivy::computeCollision(const Vector3d &oldPos, Vector3d &newPos, bool &climb
 
 				//triangle intersection
 				if (Vector3d::getBarycentricCoordinates(t->v0->pos, t->v1->pos, t->v2->pos, intersectionPoint, alpha, beta, gamma))
-				{                    
+				{
 					//test on entry or exit of the triangle mesh
 					bool entry = Vector3d::dotProduct( t->norm, newPos - oldPos) < 0.0f ? true : false;
 
@@ -352,8 +352,8 @@ void Ivy::birth()
 {
 	//evolve a gaussian filter over the adhesian vectors
 
-	float gaussian[11] = {1.0f, 2.0f, 4.0f, 7.0f, 9.0f, 10.0f, 9.0f, 7.0f, 4.0f, 2.0f, 1.0f }; 
-	
+	float gaussian[11] = {1.0f, 2.0f, 4.0f, 7.0f, 9.0f, 10.0f, 9.0f, 7.0f, 4.0f, 2.0f, 1.0f };
+
 	for (std::vector<IvyRoot>::iterator root = roots.begin(); root != roots.end(); ++root)
 	{
 		for (int g = 0; g < 5; ++g)
@@ -366,9 +366,12 @@ void Ivy::birth()
 				{
 					Vector3d tmpAdhesion;
 
-					if ((node + i) < root->nodes.begin()) tmpAdhesion = root->nodes.front().adhesionVector;
-					if ((node + i) >= root->nodes.end()) tmpAdhesion = root->nodes.back().adhesionVector;
-					if (((node + i) >= root->nodes.begin()) && ((node + i) < root->nodes.end())) tmpAdhesion = (node + i)->adhesionVector;
+                    if ((node + i) < root->nodes.begin())
+                        tmpAdhesion = root->nodes.front().adhesionVector;
+                    if ((node + i) >= root->nodes.end())
+                        tmpAdhesion = root->nodes.back().adhesionVector;
+                    if (((node + i) >= root->nodes.begin()) && ((node + i) < root->nodes.end()))
+                        tmpAdhesion = (node + i)->adhesionVector;
 
 					e += tmpAdhesion * gaussian[i+5];
 				}
@@ -404,7 +407,7 @@ void Ivy::birth()
 	tmpMaterial.id = 1;
 	tmpMaterial.name = "leaf_adult";
 	tmpMaterial.texFile = "efeu1.png";
-	
+
 	materials.push_back( tmpMaterial );
 
 
@@ -412,7 +415,7 @@ void Ivy::birth()
 	tmpMaterial.id = 2;
 	tmpMaterial.name = "leaf_young";
 	tmpMaterial.texFile = "efeu0.png";
-	
+
 	materials.push_back( tmpMaterial );
 
 
@@ -420,7 +423,7 @@ void Ivy::birth()
 	tmpMaterial.id = 3;
 	tmpMaterial.name = "branch";
 	tmpMaterial.texFile = "efeu_branch.png";
-	
+
 	materials.push_back( tmpMaterial );
 
 
@@ -440,7 +443,7 @@ void Ivy::birth()
 				//test: the probability of leaves on the ground is increased
 				float groundIvy = std::max<float>(0.0f, -Vector3d::dotProduct( Vector3d(0.0f, 1.0f, 0.0f), Vector3d::getNormalized(node->adhesionVector) ));
 				weight += groundIvy * pow(1.0f - node->length / root->nodes.back().length, 2.0f);
-				
+
 				//random influence
 				float probability = rand()/(float)RAND_MAX;
 
@@ -449,7 +452,7 @@ void Ivy::birth()
 					//alignment weight depends on the adhesion "strength"
 					float alignmentWeight = node->adhesionVector.length();
 
-					//horizontal angle (+ an epsilon vector, otherwise there's a problem at 0° and 90°... mmmh)
+					//horizontal angle (+ an epsilon vector, otherwise there's a problem at 0ï¿½ and 90ï¿½... mmmh)
 					float phi = Vector2d::vectorToPolar( Vector2d::getNormalized( Vector2d(node->adhesionVector.z, node->adhesionVector.x) ) + Vector2d::getEpsilon() ) - PI * 0.5f;
 
 					//vertical angle, trimmed by 0.5
@@ -468,30 +471,30 @@ void Ivy::birth()
 					theta += (rand()/(float)RAND_MAX - 0.5f) * (1.1f - alignmentWeight);
 
 
-                    
+
 					//create vertices
 					BasicVertex tmpVertex;
 
 					tmpVertex.pos = center + Vector3d(-local_ivyLeafSize * sizeWeight, 0.0f, local_ivyLeafSize * sizeWeight);
-					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);					
+					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);
 					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 1.0f, 0.0f), phi);
 					tmpVertex.pos += Vector3d::getRandomized() * local_ivyLeafSize * sizeWeight * 0.5f;
 					vertices.push_back( tmpVertex );
 
 					tmpVertex.pos = center + Vector3d( local_ivyLeafSize * sizeWeight, 0.0f, local_ivyLeafSize * sizeWeight);
-					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);					
-					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 1.0f, 0.0f), phi);					
+					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);
+					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 1.0f, 0.0f), phi);
 					tmpVertex.pos += Vector3d::getRandomized() * local_ivyLeafSize * sizeWeight * 0.5f;
 					vertices.push_back( tmpVertex );
 
 					tmpVertex.pos = center + Vector3d(-local_ivyLeafSize * sizeWeight, 0.0f, -local_ivyLeafSize * sizeWeight);
-					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);					
+					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);
 					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 1.0f, 0.0f), phi);
 					tmpVertex.pos += Vector3d::getRandomized() * local_ivyLeafSize * sizeWeight * 0.5f;
 					vertices.push_back( tmpVertex );
 
 					tmpVertex.pos = center + Vector3d( local_ivyLeafSize * sizeWeight, 0.0f, -local_ivyLeafSize * sizeWeight);
-					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);					
+					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 0.0f, 1.0f), theta);
 					tmpVertex.pos = Vector3d::rotateAroundAxis(tmpVertex.pos, center, Vector3d(0.0f, 1.0f, 0.0f), phi);
 					tmpVertex.pos += Vector3d::getRandomized() * local_ivyLeafSize * sizeWeight * 0.5f;
 					vertices.push_back( tmpVertex );
@@ -529,7 +532,7 @@ void Ivy::birth()
 					tmpTriangle.t1id = vertices.size()-3;
 					tmpTriangle.t2id = vertices.size()-2;
 
-					triangles.push_back( tmpTriangle );				
+					triangles.push_back( tmpTriangle );
 
 					tmpTriangle.v0id = vertices.size()-2;
 					tmpTriangle.v1id = vertices.size()-0;
@@ -539,7 +542,7 @@ void Ivy::birth()
 					tmpTriangle.t1id = vertices.size()-0;
 					tmpTriangle.t2id = vertices.size()-1;
 
-					triangles.push_back( tmpTriangle );	
+					triangles.push_back( tmpTriangle );
 				}
 			}
 		}
@@ -573,7 +576,7 @@ void Ivy::birth()
 
 			Vector3d b1 = Vector3d::rotateAroundAxis(b0, node->pos, basis, 2.09f);
 
-			Vector3d b2 = Vector3d::rotateAroundAxis(b0, node->pos, basis, 4.18f);		
+			Vector3d b2 = Vector3d::rotateAroundAxis(b0, node->pos, basis, 4.18f);
 
 
 			//create vertices
@@ -631,7 +634,7 @@ void Ivy::birth()
 			tmpTriangle.t1id = vertices.size()-0;
 			tmpTriangle.t2id = vertices.size()-1;
 
-			triangles.push_back( tmpTriangle );	
+			triangles.push_back( tmpTriangle );
 
 
 			tmpTriangle.v0id = vertices.size()-4;
@@ -642,7 +645,7 @@ void Ivy::birth()
 			tmpTriangle.t1id = vertices.size()-1;
 			tmpTriangle.t2id = vertices.size()-5;
 
-			triangles.push_back( tmpTriangle );	
+			triangles.push_back( tmpTriangle );
 
 
 			tmpTriangle.v0id = vertices.size()-5;
@@ -653,7 +656,7 @@ void Ivy::birth()
 			tmpTriangle.t1id = vertices.size()-1;
 			tmpTriangle.t2id = vertices.size()-2;
 
-			triangles.push_back( tmpTriangle );	
+			triangles.push_back( tmpTriangle );
 
 
 			tmpTriangle.v0id = vertices.size()-5;
@@ -664,7 +667,7 @@ void Ivy::birth()
 			tmpTriangle.t1id = vertices.size()-2;
 			tmpTriangle.t2id = vertices.size()-0;
 
-			triangles.push_back( tmpTriangle );	
+			triangles.push_back( tmpTriangle );
 
 
 			tmpTriangle.v0id = vertices.size()-5;
@@ -675,7 +678,7 @@ void Ivy::birth()
 			tmpTriangle.t1id = vertices.size()-0;
 			tmpTriangle.t2id = vertices.size()-3;
 
-			triangles.push_back( tmpTriangle );	
+			triangles.push_back( tmpTriangle );
 		}
 	}
 
