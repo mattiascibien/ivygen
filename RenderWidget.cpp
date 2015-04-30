@@ -352,7 +352,16 @@ void RenderWidget::renderScene()
 
     glLoadIdentity();
 
+    if(backfaceCulling && !wireFrame)
+        glEnable(GL_CULL_FACE);
+    else
+        glDisable(GL_CULL_FACE);
+    glFrontFace(GL_FRONT);
 
+    if(wireFrame)
+        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+    else
+        glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 
 	glEnable(GL_NORMALIZE);
 

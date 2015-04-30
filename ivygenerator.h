@@ -38,11 +38,17 @@ public:
     ~IvyGeneratorWindow();
 
 private:
+    //File
     QAction *importObjMtlAction;
     QAction *exportObjMtlAction;
     QAction *exitAction;
 
+    //Edit
     QAction *flipNormalsAction;
+
+    //View
+    QAction *backfaceCullingAction;
+    QAction *wireframeAction;
 
     void setupActions();
 

@@ -71,6 +71,18 @@ void IvyGeneratorWindow::setupActions()
     flipNormalsAction = new QAction("Flip Normals", this);
     connect(flipNormalsAction, SIGNAL(triggered(bool)), this, SLOT(onFlipNormals()));
     editMenu->addAction(flipNormalsAction);
+
+    QMenu *viewMenu = menuBar()->addMenu("&View");
+
+    backfaceCullingAction = new QAction("Backface culling", this);
+    backfaceCullingAction->setCheckable(true);
+    connect(backfaceCullingAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleBackfaceCulling(bool)));
+    viewMenu->addAction(backfaceCullingAction);
+
+    wireframeAction = new QAction("Wireframe", this);
+    wireframeAction->setCheckable(true);
+    connect(wireframeAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleWireframe(bool)));
+    viewMenu->addAction(wireframeAction);
 }
 
 void IvyGeneratorWindow::onImportObj()

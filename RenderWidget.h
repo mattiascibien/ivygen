@@ -39,6 +39,17 @@ public:
 	/** export a single screenshot */
 	void writeScreen();
 
+public slots:
+    void toggleWireframe(bool on)
+    {
+        wireFrame = on;
+    }
+
+    void toggleBackfaceCulling(bool on)
+    {
+        backfaceCulling = on;
+    }
+
 protected:
 
 	void paintGL();
@@ -67,6 +78,8 @@ protected:
 	void renderAuxiliary();
 
 private:
+    bool wireFrame = false;
+    bool backfaceCulling = false;
 
 	QPoint lastPos;
 
