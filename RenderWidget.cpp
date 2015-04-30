@@ -492,11 +492,44 @@ void RenderWidget::renderAuxiliary()
 		}
 	}
 
+    glScalef(2.0f * Common::mesh.boundingSphereRadius, 2.0f * Common::mesh.boundingSphereRadius, 2.0f * Common::mesh.boundingSphereRadius);
 
-	//grid
-	glColor4f(0.6f, 0.6f, 0.6f, 1.0f);
+    glLineWidth(1.5f);
 
-	glScalef(2.0f * Common::mesh.boundingSphereRadius, 2.0f * Common::mesh.boundingSphereRadius, 2.0f * Common::mesh.boundingSphereRadius);
+    //draw x axis
+    glBegin(GL_LINES);
+
+    glColor3f(1.0f, 0.0f, 0.0f);
+
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(0.1f, 0.0f, 0.0f);
+
+    glEnd();
+
+    //draw y axis
+    glBegin(GL_LINES);
+
+    glColor3f(0.0f, 1.0f, 0.0f);
+
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, 0.1f, 0.0f);
+
+    glEnd();
+
+    //draw z axis
+    glBegin(GL_LINES);
+
+    glColor3f(0.0f, 0.0f, 1.0f);
+
+    glVertex3f(0.0f, 0.0f, 0.0f);
+    glVertex3f(0.0f, 0.0f, 0.1f);
+
+    glEnd();
+
+    glLineWidth(1.0f);
+
+    //grid
+    glColor4f(0.6f, 0.6f, 0.6f, 1.0f);
 
 	for (float x = -1.0f; x <= 1.0f + 0.01f; x += 0.05f)
 	{

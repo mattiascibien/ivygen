@@ -21,8 +21,6 @@
 
 #include "SetupWidget.h"
 #include "Common.h"
-#include "OBJLoader.h"
-#include "OBJWriter.h"
 
 
 SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)
@@ -255,21 +253,6 @@ SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)
 
 	aliveRootLabel->setToolTip("shows the number of ivy branches alive");
 
-
-	QPushButton *importButton = new QPushButton("import obj+mlt");
-
-	connect(importButton, SIGNAL(clicked()), this, SLOT(onImportObj()));
-
-	importButton->setToolTip("import your scene the ivy should grow in");
-
-
-	QPushButton *exportButton = new QPushButton("export obj+mlt");
-
-	connect(exportButton, SIGNAL(clicked()), this, SLOT(onExportObj()));
-
-	exportButton->setToolTip("export the ivy geometry");
-
-
 	growButton = new QPushButton("grow");
 
 	growButton->setCheckable(true);
@@ -284,33 +267,6 @@ SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)
 	connect(birthButton, SIGNAL(clicked()), this, SLOT(onBirth()));
 
 	birthButton->setToolTip("generate the ivy geometry");
-
-
-	QPushButton *flipNormalsButton = new QPushButton("flip normals");
-
-	connect(flipNormalsButton, SIGNAL(clicked()), this, SLOT(onFlipNormals()));
-
-	flipNormalsButton->setToolTip("flip the surface normals of your scene, if the ivy is growing inside");
-
-
-
-	QGroupBox *sceneWidget = new QGroupBox("scene");
-
-	QGridLayout *sceneLayout = new QGridLayout();
-
-	sceneLayout->setMargin(10);
-
-	sceneLayout->setSpacing(5);
-
-	sceneLayout->addWidget(importButton, 0, 0);
-
-	sceneLayout->addWidget(exportButton, 0, 1);
-
-	sceneLayout->addWidget(flipNormalsButton, 1, 0);
-
-	sceneWidget->setLayout(sceneLayout);
-
-
 
 	QGroupBox *growWidget = new QGroupBox("growing");
 
@@ -398,8 +354,6 @@ SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)
 	layout->setMargin(10);
 
 	layout->setSpacing(5);
-
-	layout->addWidget(sceneWidget);
 
 	layout->addWidget(growWidget);
 
@@ -535,60 +489,6 @@ void SetupWidget::setAdhesionWeight(int value)
 	Common::ivy.adhesionWeight = (float)value / 1000.0f;
 
 	adhesionWeightLabel->setText("adhesion weight: " + QString::number(Common::ivy.adhesionWeight));
-}	
-
-
-void SetupWidget::onImportObj()
-{
-	QString fileString = QFileDialog::getOpenFileName(NULL, "open a 3d object", "", "3d objects (*.obj)");
-
-	if (fileString != "")
-	{
-		QFileInfo fileInfo(fileString);
-		
-		QString path = fileInfo.path() + "/";
-
-		QString file = fileInfo.completeBaseName() + ".obj";
-
-
-		Common::mesh.reset();
-
-
-		OBJLoader::loadOBJ( path.toStdString(), file.toStdString(), Common::mesh );
-
-
-		Common::mesh.loadTextures();
-
-		Common::mesh.prepareData();
-
-		Common::mesh.calculateVertexNormals();
-
-		Common::mesh.prepareData();
-
-		Common::mesh.createDisplayList();
-
-		Common::camera.placeNicely( Common::mesh );
-
-		update();
-	}
-}
-
-
-void SetupWidget::onExportObj()
-{
-	QString fileString = QFileDialog::getSaveFileName(NULL, "save a 3d object", "", "3d objects (*.obj)");
-
-	if (fileString != "")
-	{
-		QFileInfo fileInfo(fileString);
-		
-		QString path = fileInfo.path() + "/";
-
-		QString file = fileInfo.completeBaseName() + ".obj";
-
-
-		OBJWriter::writeOBJ( path.toStdString(), file.toStdString(), Common::ivy );
-	}
 }
 
 
@@ -646,17 +546,6 @@ void SetupWidget::onBirth()
 
 	Common::renderWidget->updateGL();
 }
-
-
-void SetupWidget::onFlipNormals()
-{
-	Common::mesh.flipNormals();
-
-	Common::mesh.createDisplayList();
-
-	Common::renderWidget->updateGL();
-}
-	
 
 	
 

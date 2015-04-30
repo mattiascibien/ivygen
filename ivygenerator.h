@@ -36,6 +36,22 @@ public:
     IvyGeneratorWindow(QWidget *parent = 0);
 
     ~IvyGeneratorWindow();
+
+private:
+    QAction *importObjMtlAction;
+    QAction *exportObjMtlAction;
+    QAction *exitAction;
+
+    QAction *flipNormalsAction;
+
+    void setupActions();
+
+public slots:
+    void onImportObj();
+
+    void onExportObj();
+
+    void onFlipNormals();
 };
 
 #endif

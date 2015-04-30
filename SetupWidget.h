@@ -65,17 +65,11 @@ private slots:
 
 	void setAdhesionWeight(int value);
 
-	void onImportObj();
-
-	void onExportObj();
-
 	void onGrow();
 
 	void onToggleGrow(bool checked);
 
 	void onBirth();
-
-	void onFlipNormals();
 
 private:
 

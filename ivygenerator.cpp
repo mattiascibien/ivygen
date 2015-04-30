@@ -21,6 +21,8 @@
 
 #include "IvyGenerator.h"
 #include "Common.h"
+#include "OBJLoader.h"
+#include "OBJWriter.h"
 
 
 IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
@@ -41,6 +43,96 @@ IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
     addDockWidget(Qt::RightDockWidgetArea, dockWidget, Qt::Vertical);
 
     setCentralWidget(Common::renderWidget);
+
+    setupActions();
+}
+
+void IvyGeneratorWindow::setupActions()
+{
+    QMenu *fileMenu = menuBar()->addMenu("&File");
+
+    importObjMtlAction = new QAction("Import OBJ+MTL...", this);
+    connect(importObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onImportObj()));
+    fileMenu->addAction(importObjMtlAction);
+
+    exportObjMtlAction = new QAction("Export OBJ+MTL...", this);
+    connect(exportObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onExportObj()));
+    fileMenu->addAction(exportObjMtlAction);
+
+    fileMenu->addSeparator();
+
+    exitAction = new QAction("Exit", this);
+    connect(exitAction, SIGNAL(triggered(bool)), this, SLOT(close()));
+    fileMenu->addAction(exitAction);
+
+
+    QMenu *editMenu = menuBar()->addMenu("&Edit");
+
+    flipNormalsAction = new QAction("Flip Normals", this);
+    connect(flipNormalsAction, SIGNAL(triggered(bool)), this, SLOT(onFlipNormals()));
+    editMenu->addAction(flipNormalsAction);
+}
+
+void IvyGeneratorWindow::onImportObj()
+{
+    QString fileString = QFileDialog::getOpenFileName(NULL, "Open 3D Model", "", "Wavefront Obj (*.obj)");
+
+    if (fileString != "")
+    {
+        QFileInfo fileInfo(fileString);
+
+        QString path = fileInfo.path() + "/";
+
+        QString file = fileInfo.completeBaseName() + ".obj";
+
+
+        Common::mesh.reset();
+
+
+        OBJLoader::loadOBJ( path.toStdString(), file.toStdString(), Common::mesh );
+
+
+        Common::mesh.loadTextures();
+
+        Common::mesh.prepareData();
+
+        Common::mesh.calculateVertexNormals();
+
+        Common::mesh.prepareData();
+
+        Common::mesh.createDisplayList();
+
+        Common::camera.placeNicely( Common::mesh );
+
+        Common::setupWidget->update();
+    }
+}
+
+
+void IvyGeneratorWindow::onExportObj()
+{
+    QString fileString = QFileDialog::getSaveFileName(NULL, "Save Ivy Object", "", "Wavefront Obj (*.obj)");
+
+    if (fileString != "")
+    {
+        QFileInfo fileInfo(fileString);
+
+        QString path = fileInfo.path() + "/";
+
+        QString file = fileInfo.completeBaseName() + ".obj";
+
+
+        OBJWriter::writeOBJ( path.toStdString(), file.toStdString(), Common::ivy );
+    }
+}
+
+void IvyGeneratorWindow::onFlipNormals()
+{
+    Common::mesh.flipNormals();
+
+    Common::mesh.createDisplayList();
+
+    Common::renderWidget->updateGL();
 }
 
 
