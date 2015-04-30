@@ -60,6 +60,9 @@ protected:
 	/** draw the scene mesh and the ivy mesh */
 	void renderScene();
 
+    /** draw the pivot */
+    void renderPivot();
+
 	/** draw auxiliary stuff */
 	void renderAuxiliary();
 

@@ -23,7 +23,7 @@
 #include "Common.h"
 
 
-IvyGenerator::IvyGenerator(QWidget *parent) : QWidget(parent)
+IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
 	setGeometry(100, 100, 1024, 768);
 
@@ -34,37 +34,17 @@ IvyGenerator::IvyGenerator(QWidget *parent) : QWidget(parent)
 
 	Common::setupWidget = new SetupWidget();
 
+    QDockWidget *dockWidget = new QDockWidget("Settings", this);
 
-	QSplitter *splitter = new QSplitter(Qt::Horizontal);
+    dockWidget->setWidget(Common::setupWidget);
 
-	splitter->addWidget(Common::renderWidget);
+    addDockWidget(Qt::RightDockWidgetArea, dockWidget, Qt::Vertical);
 
-	splitter->addWidget(Common::setupWidget);
-
-	splitter->setFrameShadow(QFrame::Shadow::Sunken);
-
-	splitter->setFrameShape(QFrame::Shape::Panel);
-
-	QList<int> sizeList;
-
-	sizeList.push_back(width()-300);
-
-	sizeList.push_back(300);
-
-	splitter->setSizes(sizeList);
-
-	
-	QGridLayout *layout = new QGridLayout();
-
-	layout->setMargin(0);
-
-	layout->addWidget(splitter);
-
-	setLayout(layout);
+    setCentralWidget(Common::renderWidget);
 }
 
 
-IvyGenerator::~IvyGenerator()
+IvyGeneratorWindow::~IvyGeneratorWindow()
 {
 }
 

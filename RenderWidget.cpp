@@ -89,6 +89,8 @@ void RenderWidget::paintGL()
 
 	//auxiliary objects, e.g. grid, ivy skeleton
 	renderAuxiliary();
+
+    renderPivot();
 }
 
 
@@ -517,6 +519,11 @@ void RenderWidget::renderAuxiliary()
 	glDisable(GL_DEPTH_TEST);
 }
 
+
+void RenderWidget::renderPivot()
+{
+
+}
 
 
 void RenderWidget::writeScreen()

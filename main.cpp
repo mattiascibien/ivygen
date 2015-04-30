@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
-    IvyGenerator ivyGenerator;
+    IvyGeneratorWindow ivyGenerator;
 
     ivyGenerator.show();
 	

@@ -26,16 +26,16 @@
 #include <QtWidgets>
 
 
-/** the main widget containing the opengl widget and the setup area */
-class IvyGenerator : public QWidget
+/** the main window containing the opengl widget and the setup area */
+class IvyGeneratorWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
 
-    IvyGenerator(QWidget *parent = 0);
+    IvyGeneratorWindow(QWidget *parent = 0);
 
-    ~IvyGenerator();
+    ~IvyGeneratorWindow();
 };
 
 #endif

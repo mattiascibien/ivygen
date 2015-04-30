@@ -395,7 +395,7 @@ void Ivy::birth()
 
 
 	//set data path
-	path = "../textures/";
+    path = "textures/";
 
 
 	//create material for leafs
