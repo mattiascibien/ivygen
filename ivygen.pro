@@ -30,3 +30,12 @@ DEFINES += QT_NO_OPENGL_ES_2
 TARGET = ivygen
 TEMPLATE = app
 QT += core gui widgets opengl
+
+data.path = $${OUT_PWD}/data
+data.files = data/*
+
+textures.path = $${OUT_PWD}/textures
+textures.files = textures/*
+
+
+INSTALLS += data textures
