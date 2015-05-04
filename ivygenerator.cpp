@@ -19,7 +19,7 @@
 ***************************************************************************************/
 
 
-#include "IvyGenerator.h"
+#include "ivygenerator.h"
 #include "Common.h"
 #include "OBJLoader.h"
 #include "OBJWriter.h"
