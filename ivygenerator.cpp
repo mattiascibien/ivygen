@@ -29,7 +29,7 @@ IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
 	setGeometry(100, 100, 1024, 768);
 
-	setWindowTitle("IvyGenerator  - Copyright (c) 2007 Thomas Luft");
+    setWindowTitle("IvyGenerator"); //  - Copyright (c) 2007 Thomas Luft");
 
 
 	Common::renderWidget = new RenderWidget();
