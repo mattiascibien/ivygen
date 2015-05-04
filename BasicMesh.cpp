@@ -45,7 +45,7 @@ BasicMesh::~BasicMesh()
 
 	if (glIsList(displayListObj))
 	{
-		glDeleteLists(displayListObj, 1 + materials.size());
+        glDeleteLists(displayListObj, 1 + (GLsizei)materials.size());
 	}
 }
 
@@ -62,7 +62,7 @@ void BasicMesh::reset()
 
 	if (glIsList(displayListObj))
 	{
-		glDeleteLists(displayListObj, 1 + materials.size());
+        glDeleteLists(displayListObj, 1 + (GLsizei)materials.size());
 	}
 
 	file = "";
@@ -231,11 +231,11 @@ void BasicMesh::createDisplayList(bool smooth)
 {
 	if (glIsList(displayListObj))
 	{
-		glDeleteLists(displayListObj, 1 + materials.size());
+        glDeleteLists(displayListObj, 1 + (GLsizei)materials.size());
 	}
 
 
-	displayListObj = glGenLists(1 + materials.size());
+    displayListObj = glGenLists(1 + (GLsizei)materials.size());
 
 
 	if (materials.size() == 0)

@@ -80,34 +80,34 @@ public:
 					  v0id(0), v1id(0), v2id(0), n0id(0), n1id(0), n2id(0), t0id(0), t1id(0), t2id(0), matid(0) {}
 
 	BasicVertex* v0;
-	unsigned int v0id;
+    unsigned int v0id;
 
 	BasicVertex* v1;
-	unsigned int v1id;
+    unsigned int v1id;
 
 	BasicVertex* v2;
-	unsigned int v2id;
+    unsigned int v2id;
 
 	BasicNormal* n0;
-	unsigned int n0id;
+    unsigned int n0id;
 
 	BasicNormal* n1;
-	unsigned int n1id;
+    unsigned int n1id;
 
 	BasicNormal* n2;
-	unsigned int n2id;
+    unsigned int n2id;
 
 	BasicTexCoord* t0;
-	unsigned int t0id;
+    unsigned int t0id;
 
 	BasicTexCoord* t1;
-	unsigned int t1id;
+    unsigned int t1id;
 
 	BasicTexCoord* t2;
-	unsigned int t2id;
+    unsigned int t2id;
 
 	BasicMaterial* mat;
-	unsigned int matid;
+    unsigned int matid;
 
 	Vector3d norm;
 };

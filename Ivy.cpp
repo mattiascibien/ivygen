@@ -42,14 +42,14 @@ void Ivy::resetSettings()
 
 	branchingProbability = 0.95f;
 
-	leafProbability = 0.7;
+    leafProbability = 0.7f;
 
 
 	ivySize = 0.005f;
 
 	ivyLeafSize = 1.5f;
 
-	ivyBranchSize = 0.15;
+    ivyBranchSize = 0.15f;
 
 
 	maxFloatLength = 0.1f;
@@ -524,23 +524,23 @@ void Ivy::birth()
 					float probability = rand()/(float)RAND_MAX;
 					if (probability * weight > leafProbability) tmpTriangle.matid = 2;
 
-					tmpTriangle.v0id = vertices.size()-1;
-					tmpTriangle.v1id = vertices.size()-3;
-					tmpTriangle.v2id = vertices.size()-2;
+                    tmpTriangle.v0id = (unsigned int)vertices.size()-1;
+                    tmpTriangle.v1id = (unsigned int)vertices.size()-3;
+                    tmpTriangle.v2id = (unsigned int)vertices.size()-2;
 
-					tmpTriangle.t0id = vertices.size()-1;
-					tmpTriangle.t1id = vertices.size()-3;
-					tmpTriangle.t2id = vertices.size()-2;
+                    tmpTriangle.t0id = (unsigned int)vertices.size()-1;
+                    tmpTriangle.t1id = (unsigned int)vertices.size()-3;
+                    tmpTriangle.t2id = (unsigned int)vertices.size()-2;
 
 					triangles.push_back( tmpTriangle );
 
-					tmpTriangle.v0id = vertices.size()-2;
-					tmpTriangle.v1id = vertices.size()-0;
-					tmpTriangle.v2id = vertices.size()-1;
+                    tmpTriangle.v0id = (unsigned int)vertices.size()-2;
+                    tmpTriangle.v1id = (unsigned int)vertices.size()-0;
+                    tmpTriangle.v2id = (unsigned int)vertices.size()-1;
 
-					tmpTriangle.t0id = vertices.size()-2;
-					tmpTriangle.t1id = vertices.size()-0;
-					tmpTriangle.t2id = vertices.size()-1;
+                    tmpTriangle.t0id = (unsigned int)vertices.size()-2;
+                    tmpTriangle.t1id = (unsigned int)vertices.size()-0;
+                    tmpTriangle.t2id = (unsigned int)vertices.size()-1;
 
 					triangles.push_back( tmpTriangle );
 				}
@@ -615,68 +615,68 @@ void Ivy::birth()
 
 			tmpTriangle.matid = 3;
 
-			tmpTriangle.v0id = vertices.size()-3;
-			tmpTriangle.v1id = vertices.size()-0;
-			tmpTriangle.v2id = vertices.size()-4;
+            tmpTriangle.v0id = (unsigned int)vertices.size()-3;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-4;
 
-			tmpTriangle.t0id = vertices.size()-3;
-			tmpTriangle.t1id = vertices.size()-0;
-			tmpTriangle.t2id = vertices.size()-4;
-
-			triangles.push_back( tmpTriangle );
-
-
-			tmpTriangle.v0id = vertices.size()-4;
-			tmpTriangle.v1id = vertices.size()-0;
-			tmpTriangle.v2id = vertices.size()-1;
-
-			tmpTriangle.t0id = vertices.size()-4;
-			tmpTriangle.t1id = vertices.size()-0;
-			tmpTriangle.t2id = vertices.size()-1;
+            tmpTriangle.t0id = (unsigned int)vertices.size()-3;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-4;
 
 			triangles.push_back( tmpTriangle );
 
 
-			tmpTriangle.v0id = vertices.size()-4;
-			tmpTriangle.v1id = vertices.size()-1;
-			tmpTriangle.v2id = vertices.size()-5;
+            tmpTriangle.v0id = (unsigned int)vertices.size()-4;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-1;
 
-			tmpTriangle.t0id = vertices.size()-4;
-			tmpTriangle.t1id = vertices.size()-1;
-			tmpTriangle.t2id = vertices.size()-5;
-
-			triangles.push_back( tmpTriangle );
-
-
-			tmpTriangle.v0id = vertices.size()-5;
-			tmpTriangle.v1id = vertices.size()-1;
-			tmpTriangle.v2id = vertices.size()-2;
-
-			tmpTriangle.t0id = vertices.size()-5;
-			tmpTriangle.t1id = vertices.size()-1;
-			tmpTriangle.t2id = vertices.size()-2;
+            tmpTriangle.t0id = (unsigned int)vertices.size()-4;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-1;
 
 			triangles.push_back( tmpTriangle );
 
 
-			tmpTriangle.v0id = vertices.size()-5;
-			tmpTriangle.v1id = vertices.size()-2;
-			tmpTriangle.v2id = vertices.size()-0;
+            tmpTriangle.v0id = (unsigned int)vertices.size()-4;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-1;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-5;
 
-			tmpTriangle.t0id = vertices.size()-5;
-			tmpTriangle.t1id = vertices.size()-2;
-			tmpTriangle.t2id = vertices.size()-0;
+            tmpTriangle.t0id = (unsigned int)vertices.size()-4;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-1;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-5;
 
 			triangles.push_back( tmpTriangle );
 
 
-			tmpTriangle.v0id = vertices.size()-5;
-			tmpTriangle.v1id = vertices.size()-0;
-			tmpTriangle.v2id = vertices.size()-3;
+            tmpTriangle.v0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-1;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-2;
 
-			tmpTriangle.t0id = vertices.size()-5;
-			tmpTriangle.t1id = vertices.size()-0;
-			tmpTriangle.t2id = vertices.size()-3;
+            tmpTriangle.t0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-1;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-2;
+
+			triangles.push_back( tmpTriangle );
+
+
+            tmpTriangle.v0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-2;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-0;
+
+            tmpTriangle.t0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-2;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-0;
+
+			triangles.push_back( tmpTriangle );
+
+
+            tmpTriangle.v0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.v1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.v2id = (unsigned int)vertices.size()-3;
+
+            tmpTriangle.t0id = (unsigned int)vertices.size()-5;
+            tmpTriangle.t1id = (unsigned int)vertices.size()-0;
+            tmpTriangle.t2id = (unsigned int)vertices.size()-3;
 
 			triangles.push_back( tmpTriangle );
 		}
