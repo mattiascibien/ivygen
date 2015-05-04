@@ -78,8 +78,8 @@ protected:
 	void renderAuxiliary();
 
 private:
-    bool wireFrame = false;
-    bool backfaceCulling = false;
+    bool wireFrame;
+    bool backfaceCulling;
 
 	QPoint lastPos;
 

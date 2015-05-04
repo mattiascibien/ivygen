@@ -29,6 +29,9 @@
 
 RenderWidget::RenderWidget(QWidget *parent) : QGLWidget(parent)
 {
+    wireFrame = false;
+    backfaceCulling = false;
+
 	QGLFormat format;
 
 	format.setAccum(false);
