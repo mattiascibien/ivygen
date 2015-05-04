@@ -35,8 +35,10 @@ data.files = data/*
 textures.path = $${OUT_PWD}/textures
 textures.files = textures/*
 
+CONFIG += c++11
 
 INSTALLS += data textures
 
 DISTFILES += \
-    travis.yml
+    travis.yml \
+    ivygen.rc
