@@ -37,3 +37,6 @@ textures.files = textures/*
 
 
 INSTALLS += data textures
+
+DISTFILES += \
+    travis.yml
