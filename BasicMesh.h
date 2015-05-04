@@ -25,6 +25,7 @@
 #include "Vector3d.h"
 #include "Vector2d.h"
 #include <vector>
+#include <string>
 
 
 /** a simple vertex */
