@@ -39,6 +39,10 @@ CONFIG += c++11
 
 INSTALLS += data textures
 
+unix {
+    LIBS += -lGLU
+}
+
 DISTFILES += \
     travis.yml \
     ivygen.rc
