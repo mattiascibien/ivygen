@@ -1,7 +1,6 @@
 os: unstable
 install:
-  - set QTDIR=C:\Qt\Qt5.3.2\5.3\mingw482_32
-  - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+  - set QTDIR=C:\Qt\Qt5.4\5.4\msvc2013_64_opengl
 build_script:
   - qmake ivygen.pro
-  - mingw32-make
+  - nmake
