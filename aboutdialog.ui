@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>296</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,20 +24,37 @@
      <property name="text">
       <string>Ivy Generator</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
    <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Copyright (c) 2007 Thomas Luft</string>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>201</height>
-      </size>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Copyright (c) 2015 Mattias cibien</string>
      </property>
-    </spacer>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ivygen.qrc">:/images/resources/images/icon_big.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -51,7 +68,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="ivygen.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

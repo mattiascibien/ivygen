@@ -47,3 +47,6 @@ unix {
 
 FORMS += \
     aboutdialog.ui
+
+RESOURCES += \
+    ivygen.qrc
