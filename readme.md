@@ -1,4 +1,5 @@
-# An Ivy Generator [![Build Status](https://travis-ci.org/mattiascibien/ivygen.svg?branch=master)](https://travis-ci.org/mattiascibien/ivygen)
+# An Ivy Generator [![Build Status](https://travis-ci.org/mattiascibien/ivygen.svg?branch=master)](https://travis-ci.org/mattiascibien/ivygen) [![Build status](https://ci.appveyor.com/api/projects/status/y2rpe8f1fc8s4reh?svg=true)](https://ci.appveyor.com/project/mattiascibien/ivygen)
+
 
 Original code Copyright (c) 2007 Thomas Luft. All rights reserved.
 
