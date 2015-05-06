@@ -9,7 +9,8 @@ HEADERS += \
     RenderWidget.h \
     SetupWidget.h \
     Vector2d.h \
-    Vector3d.h
+    Vector3d.h \
+    aboutdialog.h
 
 SOURCES += \
     BasicMesh.cpp \
@@ -21,7 +22,8 @@ SOURCES += \
     OBJLoader.cpp \
     OBJWriter.cpp \
     RenderWidget.cpp \
-    SetupWidget.cpp
+    SetupWidget.cpp \
+    aboutdialog.cpp
 
 RC_FILE = ivygen.rc
 
@@ -43,6 +45,5 @@ unix {
     LIBS += -lGLU
 }
 
-DISTFILES += \
-    travis.yml \
-    ivygen.rc
+FORMS += \
+    aboutdialog.ui

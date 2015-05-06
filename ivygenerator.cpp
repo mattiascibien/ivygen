@@ -25,12 +25,15 @@
 #include "OBJWriter.h"
 
 
+#include "aboutdialog.h"
+
 IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
 	setGeometry(100, 100, 1024, 768);
 
     setWindowTitle("IvyGenerator"); //  - Copyright (c) 2007 Thomas Luft");
 
+    aboutWindow = new AboutDialog(this);
 
 	Common::renderWidget = new RenderWidget();
 
@@ -83,6 +86,16 @@ void IvyGeneratorWindow::setupActions()
     wireframeAction->setCheckable(true);
     connect(wireframeAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleWireframe(bool)));
     viewMenu->addAction(wireframeAction);
+
+    QMenu *helpMenu = menuBar()->addMenu("&Help");
+
+    aboutAction = new QAction("About...", this);
+    connect(aboutAction, SIGNAL(triggered(bool)), this, SLOT(onAbout()));
+    helpMenu->addAction(aboutAction);
+
+    aboutQtAction = new QAction("About Qt...", this);
+    connect(aboutQtAction, SIGNAL(triggered(bool)), qApp, SLOT(aboutQt()));
+    helpMenu->addAction(aboutQtAction);
 }
 
 void IvyGeneratorWindow::onImportObj()
@@ -145,6 +158,11 @@ void IvyGeneratorWindow::onFlipNormals()
     Common::mesh.createDisplayList();
 
     Common::renderWidget->updateGL();
+}
+
+void IvyGeneratorWindow::onAbout()
+{
+    aboutWindow->show();
 }
 
 
