@@ -1,31 +1,31 @@
 HEADERS += \
-    BasicMesh.h \
-    Camera.h \
-    Common.h \
-    Ivy.h \
-    ivygenerator.h \
-    OBJLoader.h \
-    OBJWriter.h \
-    RenderWidget.h \
-    SetupWidget.h \
-    Vector2d.h \
-    Vector3d.h \
-    aboutdialog.h
+    src/BasicMesh.h \
+    src/Camera.h \
+    src/Common.h \
+    src/Ivy.h \
+    src/ivygenerator.h \
+    src/OBJLoader.h \
+    src/OBJWriter.h \
+    src/RenderWidget.h \
+    src/SetupWidget.h \
+    src/Vector2d.h \
+    src/Vector3d.h \
+    src/aboutdialog.h
 
 SOURCES += \
-    BasicMesh.cpp \
-    Camera.cpp \
-    Common.cpp \
-    Ivy.cpp \
-    ivygenerator.cpp \
-    main.cpp \
-    OBJLoader.cpp \
-    OBJWriter.cpp \
-    RenderWidget.cpp \
-    SetupWidget.cpp \
-    aboutdialog.cpp
+    src/BasicMesh.cpp \
+    src/Camera.cpp \
+    src/Common.cpp \
+    src/Ivy.cpp \
+    src/ivygenerator.cpp \
+    src/main.cpp \
+    src/OBJLoader.cpp \
+    src/OBJWriter.cpp \
+    src/RenderWidget.cpp \
+    src/SetupWidget.cpp \
+    src/aboutdialog.cpp
 
-RC_FILE = ivygen.rc
+RC_FILE = resources/ivygen.rc
 
 TARGET = ivygen
 TEMPLATE = app
@@ -46,7 +46,7 @@ unix {
 }
 
 FORMS += \
-    aboutdialog.ui
+    src/aboutdialog.ui
 
 RESOURCES += \
-    ivygen.qrc
+    resources/ivygen.qrc
