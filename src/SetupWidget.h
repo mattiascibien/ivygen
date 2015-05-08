@@ -37,6 +37,11 @@ public:
 
     ~SetupWidget();
 
+    void StopTimer()
+    {
+        timer->stop();
+    }
+
 public slots:
 
 	void update();
@@ -62,6 +67,7 @@ private slots:
 	void onGrow();
 
 	void onToggleGrow(bool checked);
+
 
 private:
 
