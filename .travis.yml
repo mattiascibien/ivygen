@@ -1,5 +1,7 @@
 language: cpp
 
+sudo: required
+
 os:
     - osx
     - linux
