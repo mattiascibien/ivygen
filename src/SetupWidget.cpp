@@ -251,11 +251,11 @@ SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)
     setLayout(growLayout);
 
 
-	timer = new QTimer(this);
+    Common::timer = new QTimer(this);
 
-	timer->setInterval(1);
+    Common::timer->setInterval(1);
 
-	connect(timer, SIGNAL(timeout()), this, SLOT(onGrow()));
+    connect(Common::timer, SIGNAL(timeout()), this, SLOT(onGrow()));
 }
 
 
@@ -365,7 +365,7 @@ void SetupWidget::onGrow()
 
 	if (aliveCount == 0)
 	{
-		timer->stop();
+        Common::timer->stop();
 
 		growButton->setChecked(false);
 	}
@@ -386,11 +386,11 @@ void SetupWidget::onToggleGrow(bool checked)
 	{
 		Common::ivy.reset();
 
-		timer->start();
+        Common::timer->start();
 	}
 	else
 	{
-		timer->stop();
+        Common::timer->stop();
 	}
 }
 

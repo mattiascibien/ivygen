@@ -54,6 +54,8 @@ public:
 
     /** the birth widget right-hand */
     static BirthWidget *birthWidget;
+
+    static QTimer *timer;
 };
 
 

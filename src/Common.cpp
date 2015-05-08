@@ -33,3 +33,5 @@ RenderWidget *Common::renderWidget = NULL;
 SetupWidget *Common::setupWidget = NULL;
 	
 BirthWidget *Common::birthWidget = NULL;
+
+QTimer *Common::timer = NULL;

@@ -37,11 +37,6 @@ public:
 
     ~SetupWidget();
 
-    void StopTimer()
-    {
-        timer->stop();
-    }
-
 public slots:
 
 	void update();
@@ -69,10 +64,7 @@ private slots:
 	void onToggleGrow(bool checked);
 
 
-private:
-
-	QTimer *timer;
-	
+private:	
 	QLabel *ivySizeLabel;
 
 	QLabel *branchingProbabilityLabel;

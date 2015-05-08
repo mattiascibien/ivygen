@@ -132,7 +132,7 @@ void BirthWidget::setLeafProbability(int value)
 
 void BirthWidget::onBirth()
 {
-    Common::setupWidget->StopTimer();
+    Common::timer->stop();
 
     Common::ivy.birth();
 
