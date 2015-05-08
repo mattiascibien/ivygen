@@ -43,11 +43,13 @@ public slots:
     void toggleWireframe(bool on)
     {
         wireFrame = on;
+        updateGL();
     }
 
     void toggleBackfaceCulling(bool on)
     {
         backfaceCulling = on;
+        updateGL();
     }
 
 protected:
