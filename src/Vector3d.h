@@ -36,9 +36,9 @@ public:
 	float		y;
 	float		z;
 
-	Vector3d() : x(0.0f), y(0.0f), z(0.0f) {};
+    Vector3d() : x(0.0f), y(0.0f), z(0.0f) {}
 
-	Vector3d( const float &x, const float &y, const float &z ) : x(x), y(y), z(z) {};
+    Vector3d( const float &x, const float &y, const float &z ) : x(x), y(y), z(z) {}
 
 	friend inline Vector3d operator-( const Vector3d& vector )
 	{

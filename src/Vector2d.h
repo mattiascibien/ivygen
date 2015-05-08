@@ -35,9 +35,9 @@ public:
 	float		x;
 	float		y;
 
-	Vector2d() : x(0.0f), y(0.0f) {};
+    Vector2d() : x(0.0f), y(0.0f) {}
 
-	Vector2d( const float& x, const float& y ) : x(x), y(y) {};
+    Vector2d( const float& x, const float& y ) : x(x), y(y) {}
 
 	friend inline Vector2d operator-( const Vector2d& vector )
 	{
