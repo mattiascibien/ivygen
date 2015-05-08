@@ -28,6 +28,7 @@
 #include "Ivy.h"
 #include "RenderWidget.h"
 #include "SetupWidget.h"
+#include "birthwidget.h"
 
 
 /** general class for global object and attributes */
@@ -48,8 +49,11 @@ public:
 	/** the opengl rendering widget */
 	static RenderWidget *renderWidget;
 
-	/** the setup widget right-hand */
+    /** the grow widget right-hand */
 	static SetupWidget *setupWidget;
+
+    /** the birth widget right-hand */
+    static BirthWidget *birthWidget;
 };
 
 

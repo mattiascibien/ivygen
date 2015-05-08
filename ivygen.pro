@@ -10,7 +10,8 @@ HEADERS += \
     src/SetupWidget.h \
     src/Vector2d.h \
     src/Vector3d.h \
-    src/aboutdialog.h
+    src/aboutdialog.h \
+    src/birthwidget.h
 
 SOURCES += \
     src/BasicMesh.cpp \
@@ -23,7 +24,8 @@ SOURCES += \
     src/OBJWriter.cpp \
     src/RenderWidget.cpp \
     src/SetupWidget.cpp \
-    src/aboutdialog.cpp
+    src/aboutdialog.cpp \
+    src/birthwidget.cpp
 
 RC_FILE = resources/ivygen.rc
 

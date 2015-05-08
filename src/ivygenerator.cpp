@@ -39,11 +39,20 @@ IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 
 	Common::setupWidget = new SetupWidget();
 
-    QDockWidget *dockWidget = new QDockWidget("Settings", this);
+    Common::birthWidget = new BirthWidget();
 
-    dockWidget->setWidget(Common::setupWidget);
 
-    addDockWidget(Qt::RightDockWidgetArea, dockWidget, Qt::Vertical);
+    QDockWidget *growWidget = new QDockWidget("Settings", this);
+
+    growWidget->setWidget(Common::setupWidget);
+
+    addDockWidget(Qt::RightDockWidgetArea, growWidget, Qt::Vertical);
+
+    QDockWidget *birthWidget = new QDockWidget("Birth", this);
+
+    birthWidget->setWidget(Common::birthWidget);
+
+    addDockWidget(Qt::RightDockWidgetArea, birthWidget, Qt::Vertical);
 
     setCentralWidget(Common::renderWidget);
 

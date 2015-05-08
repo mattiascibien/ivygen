@@ -32,3 +32,4 @@ RenderWidget *Common::renderWidget = NULL;
 
 SetupWidget *Common::setupWidget = NULL;
 	
+BirthWidget *Common::birthWidget = NULL;

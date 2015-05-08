@@ -45,13 +45,7 @@ private slots:
 
 	void setIvySize(int value);
 
-	void setIvyLeafSize(int value);
-
-	void setIvyBranchSize(int value);
-
 	void setBranchingProbability(int value);
-
-	void setLeafProbability(int value);
 
     void setMaxFloatLength(int value);
 
@@ -69,21 +63,13 @@ private slots:
 
 	void onToggleGrow(bool checked);
 
-	void onBirth();
-
 private:
 
 	QTimer *timer;
 	
 	QLabel *ivySizeLabel;
 
-	QLabel *ivyLeafSizeLabel;
-
-	QLabel *ivyBranchSizeLabel;
-
 	QLabel *branchingProbabilityLabel;
-
-	QLabel *leafProbabilityLabel;
 
 	QLabel *maxFloatLengthLabel;
 
