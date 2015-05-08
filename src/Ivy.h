@@ -32,7 +32,7 @@ class IvyNode
 {
 public:
 
-	IvyNode() : climb(false), length(0.0f), floatingLength(0.0f) {};
+    IvyNode() : length(0.0f), floatingLength(0.0f), climb(false) {};
 
 	/** node position */
 	Vector3d pos;			

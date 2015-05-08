@@ -77,8 +77,10 @@ class BasicTriangle
 {
 public:
 
-	BasicTriangle() : v0(NULL), v1(NULL), v2(NULL), n0(NULL), n1(NULL), n2(NULL), t0(NULL), t1(NULL), t2(NULL), mat(NULL),
-					  v0id(0), v1id(0), v2id(0), n0id(0), n1id(0), n2id(0), t0id(0), t1id(0), t2id(0), matid(0) {}
+    BasicTriangle() : v0(NULL), v0id(0), v1(NULL), v1id(0), v2(NULL), v2id(0),
+                        n0(NULL), n0id(0), n1(NULL), n1id(0), n2(NULL), n2id(0),
+                        t0(NULL), t0id(0), t1(NULL), t1id(0), t2(NULL), t2id(0),
+                        mat(NULL), matid(0) {}
 
 	BasicVertex* v0;
     unsigned int v0id;
