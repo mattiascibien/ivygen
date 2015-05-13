@@ -354,37 +354,70 @@ void Ivy::birth()
 
 	float gaussian[11] = {1.0f, 2.0f, 4.0f, 7.0f, 9.0f, 10.0f, 9.0f, 7.0f, 4.0f, 2.0f, 1.0f };
 
-	for (std::vector<IvyRoot>::iterator root = roots.begin(); root != roots.end(); ++root)
-	{
-		for (int g = 0; g < 5; ++g)
-		{
-			for (std::vector<IvyNode>::iterator node = root->nodes.begin(); node != root->nodes.end(); ++node)
-			{
-				Vector3d e;
+    for(int r=0; r < roots.size(); r++)
+    {
+        for(int g = 0; g <5; ++g)
+        {
+            IvyRoot root = roots[r];
+            for(int n=0; n < root.nodes.size(); n++)
+            {
+                Vector3d e;
 
-				for (int i = -5; i <= 5; ++i)
-				{
-					Vector3d tmpAdhesion;
+                for (int i = -5; i <= 5; ++i)
+                {
+                    Vector3d tmpAdhesion;
 
-                    if ((node + i) < root->nodes.begin())
-                        tmpAdhesion = root->nodes.front().adhesionVector;
-                    if ((node + i) >= root->nodes.end())
-                        tmpAdhesion = root->nodes.back().adhesionVector;
-                    if (((node + i) >= root->nodes.begin()) && ((node + i) < root->nodes.end()))
-                        tmpAdhesion = (node + i)->adhesionVector;
+                    if ((n + i) < 0)
+                        tmpAdhesion = root.nodes.front().adhesionVector;
+                    if ((n + i) >= root.nodes.size())
+                        tmpAdhesion = root.nodes.back().adhesionVector;
+                    if (((n + i) >= 0) && ((n + i) < root.nodes.size()))
+                        tmpAdhesion = root.nodes[n + i].adhesionVector;
 
-					e += tmpAdhesion * gaussian[i+5];
-				}
+                    e += tmpAdhesion * gaussian[i+5];
+                }
 
-				node->smoothAdhesionVector = e / 56.0f;
-			}
+               root.nodes[n].smoothAdhesionVector = e / 56.0f;
+            }
 
-			for (std::vector<IvyNode>::iterator node = root->nodes.begin(); node != root->nodes.end(); ++node)
-			{
-				node->adhesionVector = node->smoothAdhesionVector;
-			}
-		}
-	}
+            for(int n=0; n < root.nodes.size(); n++)
+            {
+                root.nodes[n].adhesionVector = root.nodes[n].smoothAdhesionVector;
+            }
+        }
+    }
+
+//	for (std::vector<IvyRoot>::iterator root = roots.begin(); root != roots.end(); ++root)
+//	{
+//		for (int g = 0; g < 5; ++g)
+//		{
+//			for (std::vector<IvyNode>::iterator node = root->nodes.begin(); node != root->nodes.end(); ++node)
+//			{
+//				Vector3d e;
+
+//				for (int i = -5; i <= 5; ++i)
+//				{
+//					Vector3d tmpAdhesion;
+
+//                    if ((node + i) < root->nodes.begin())
+//                        tmpAdhesion = root->nodes.front().adhesionVector;
+//                    if ((node + i) >= root->nodes.end())
+//                        tmpAdhesion = root->nodes.back().adhesionVector;
+//                    if (((node + i) >= root->nodes.begin()) && ((node + i) < root->nodes.end()))
+//                        tmpAdhesion = (node + i)->adhesionVector;
+
+//					e += tmpAdhesion * gaussian[i+5];
+//				}
+
+//				node->smoothAdhesionVector = e / 56.0f;
+//			}
+
+//            for (std::vector<IvyNode>::iterator node = root->nodes.begin(); node != root->nodes.end(); ++node)
+//            {
+//                node->adhesionVector = node->smoothAdhesionVector;
+//            }
+//		}
+//	}
 
 
 	//parameters that depend on the scene object bounding sphere
