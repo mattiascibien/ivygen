@@ -1,3 +1,5 @@
+include(./qmake/gitversion.pri)
+
 HEADERS += \
     src/BasicMesh.h \
     src/Camera.h \
