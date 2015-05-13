@@ -260,24 +260,42 @@ void OBJLoader::extractVertexInfo(std::string &v, unsigned int &vid, unsigned in
 
 void OBJLoader::parseOBJFace(BasicMesh &model)
 {
-	BasicTriangle triang;
+    std::vector<std::string> vertices;
+    std::string vertex;
+    fileStream >> vertex;
 
+    while(vertex != "f"
+          && vertex != "v"
+          && vertex != "vn"
+          && vertex != "vt"
+          && vertex !="mtllib"
+          && vertex != "usemtl")
+    {
+        vertices.push_back(vertex);
+        fileStream >> vertex;
+    }
 
-	//read vertices
-	std::string v0, v1, v2;
+    fileStream.seekg(-1, std::ios::cur);
 
-	fileStream >> v0 >> v1 >> v2;
+    std::string v0 = vertices[0];
 
+    //face triangulation
+    for(int i = 1; i < vertices.size() - 1; i += 2)
+    {
+        BasicTriangle triang;
+        std::string v1 = vertices[i];
+        std::string v2 = vertices[i+1];
 
-	extractVertexInfo(v0, triang.v0id, triang.n0id, triang.t0id);
+        extractVertexInfo(v0, triang.v0id, triang.n0id, triang.t0id);
+        extractVertexInfo(v1, triang.v1id, triang.n1id, triang.t1id);
+        extractVertexInfo(v2, triang.v2id, triang.n2id, triang.t2id);
 
-	extractVertexInfo(v1, triang.v1id, triang.n1id, triang.t1id);
+        if (currentMaterial != NULL)
+            triang.matid = currentMaterial->id;
+        else
+            triang.matid = 0;
 
-	extractVertexInfo(v2, triang.v2id, triang.n2id, triang.t2id);
-
-	
-	if (currentMaterial != NULL) triang.matid = currentMaterial->id; else triang.matid = 0; 
-
-	model.triangles.push_back(triang);
+        model.triangles.push_back(triang);
+    }
 }
 
