@@ -12,16 +12,20 @@ This fork is maintained by [Mattias Cibien](http://mattiascibien.net)
  - Port to Qt5
  - Improvements on rendering code
  - Usability improvements
+ - No more need to triangulate models on import
 
 ## Usage
 
 Import your obj+mtl scene, double-click to place the ivy root,
-press "grow", and enjoy watching the ivy growing! Press "birth"
-to generate the full geometry. Use the export function to save
-your ivy geometry as obj+mtl for usage in your 3d world.
-Please triangulate your obj scene before loading it, and keep
-your scenes simple, since the growing process slows down in
-complex scenes heavily. In case your ivy is growing inside your
+press "grow", and enjoy watching the ivy growing! 
+
+Press "birth" to generate the full geometry. 
+
+Use the export function to save your ivy geometry as obj+mtl for usage in your 3d world.
+Please try to keep your scenes simple, since the growing process 
+slows down in complex scenes heavily. 
+
+In case your ivy is growing inside your
 objects, use the "flip normals" button to flip the surface
 normals of your objects. You can customize your ivy using the
 provided settings - tool-tips will help you to understand
