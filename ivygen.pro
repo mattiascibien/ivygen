@@ -1,4 +1,5 @@
 include(./qmake/gitversion.pri)
+include(./qmake/deployqt.pri)
 
 HEADERS += \
     src/BasicMesh.h \
