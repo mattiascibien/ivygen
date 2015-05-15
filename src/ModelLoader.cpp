@@ -76,7 +76,7 @@ bool ModelLoader::loadOBJ( const std::string &path, const std::string &file, Bas
 
         material.name = currentMat->name;
         material.texFile = currentMat->texture_filename;
-        material.id = i;
+        material.id = i+1;
 
         model.materials.push_back(material);
     }
@@ -86,19 +86,19 @@ bool ModelLoader::loadOBJ( const std::string &path, const std::string &file, Bas
         obj_face *currentFace = loader.faceList[i];
         BasicTriangle triangle;
 
-        triangle.v0id = currentFace->vertex_index[0];
-        triangle.n0id = currentFace->normal_index[0];
-        triangle.t0id = currentFace->texture_index[0];
+        triangle.v0id = currentFace->vertex_index[0]+1;
+        triangle.n0id = currentFace->normal_index[0]+1;
+        triangle.t0id = currentFace->texture_index[0]+1;
 
-        triangle.v1id = currentFace->vertex_index[1];
-        triangle.n1id = currentFace->normal_index[1];
-        triangle.t1id = currentFace->texture_index[1];
+        triangle.v1id = currentFace->vertex_index[1]+1;
+        triangle.n1id = currentFace->normal_index[1]+1;
+        triangle.t1id = currentFace->texture_index[1]+1;
 
-        triangle.v2id = currentFace->vertex_index[2];
-        triangle.n2id = currentFace->normal_index[2];
-        triangle.t2id = currentFace->texture_index[2];
+        triangle.v2id = currentFace->vertex_index[2]+1;
+        triangle.n2id = currentFace->normal_index[2]+1;
+        triangle.t2id = currentFace->texture_index[2]+1;
 
-        triangle.matid = currentFace->material_index;
+        triangle.matid = currentFace->material_index+1;
 
         model.triangles.push_back(triangle);
     }
