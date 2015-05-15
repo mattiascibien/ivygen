@@ -86,7 +86,7 @@ bool ModelLoader::loadOBJ( const std::string &path, const std::string &file, Bas
         obj_face *currentFace = loader.faceList[i];
 
         //Automatically triangulate faces
-        for(int j=1; j <currentFace->vertex_count -1; j += 2)
+        for(int j=1; j <currentFace->vertex_count -1; j++)
         {
             BasicTriangle triangle;
 
