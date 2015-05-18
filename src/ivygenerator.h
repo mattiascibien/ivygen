@@ -26,6 +26,7 @@
 #include <QtWidgets>
 
 class AboutDialog;
+class SettingsDialog;
 
 /** the main window containing the opengl widget and the setup area */
 class IvyGeneratorWindow : public QMainWindow
@@ -40,6 +41,8 @@ public:
 
 private:
     AboutDialog *aboutWindow;
+    SettingsDialog *settingsDialog;
+
     //File
     QAction *importObjMtlAction;
     QAction *exportObjMtlAction;
@@ -47,6 +50,7 @@ private:
 
     //Edit
     QAction *flipNormalsAction;
+    QAction *preferencesAction;
 
     //View
     QAction *backfaceCullingAction;
@@ -71,6 +75,8 @@ public slots:
     void onFlipNormals();
 
     void onAbout();
+
+    void onPreferences();
 };
 
 #endif

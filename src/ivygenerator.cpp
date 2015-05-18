@@ -26,6 +26,7 @@
 
 
 #include "aboutdialog.h"
+#include "settingsdialog.h"
 
 IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -34,6 +35,7 @@ IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
     setWindowTitle("IvyGenerator"); //  - Copyright (c) 2007 Thomas Luft");
 
     aboutWindow = new AboutDialog(this);
+    settingsDialog = new SettingsDialog(this);
 
 	Common::renderWidget = new RenderWidget();
 
@@ -83,6 +85,12 @@ void IvyGeneratorWindow::setupActions()
     flipNormalsAction = new QAction("Flip Normals", this);
     connect(flipNormalsAction, SIGNAL(triggered(bool)), this, SLOT(onFlipNormals()));
     editMenu->addAction(flipNormalsAction);
+
+    editMenu->addSeparator();
+
+    preferencesAction = new QAction("Preferences", this);
+    connect(preferencesAction, SIGNAL(triggered(bool)), this, SLOT(onPreferences()));
+    editMenu->addAction(preferencesAction);
 
     QMenu *viewMenu = menuBar()->addMenu("&View");
 
@@ -177,6 +185,11 @@ void IvyGeneratorWindow::onFlipNormals()
 void IvyGeneratorWindow::onAbout()
 {
     aboutWindow->show();
+}
+
+void IvyGeneratorWindow::onPreferences()
+{
+    settingsDialog->show();
 }
 
 

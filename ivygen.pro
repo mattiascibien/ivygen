@@ -1,6 +1,8 @@
 include(./qmake/gitversion.pri)
 include(./qmake/deployqt.pri)
 
+INCLUDEPATH += src
+
 HEADERS += \
     src/BasicMesh.h \
     src/Camera.h \
@@ -18,7 +20,9 @@ HEADERS += \
     src/objloader/obj_parser.h \
     src/objloader/objLoader.h \
     src/objloader/string_extra.h \
-    src/ModelLoader.h
+    src/ModelLoader.h \
+    src/settingsdialog.h \
+    src/colorpickerwidget.h
 
 SOURCES += \
     src/BasicMesh.cpp \
@@ -36,7 +40,9 @@ SOURCES += \
     src/objloader/obj_parser.cpp \
     src/objloader/objLoader.cpp \
     src/objloader/string_extra.cpp \
-    src/ModelLoader.cpp
+    src/ModelLoader.cpp \
+    src/settingsdialog.cpp \
+    src/colorpickerwidget.cpp
 
 RC_FILE = resources/ivygen.rc
 
@@ -59,7 +65,9 @@ unix {
 }
 
 FORMS += \
-    src/aboutdialog.ui
+    src/aboutdialog.ui \
+    src/settingsdialog.ui \
+    src/colorpickerwidget.ui
 
 RESOURCES += \
     resources/ivygen.qrc

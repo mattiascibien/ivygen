@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/resources">
         <file>images/icon_big.png</file>
+        <file>images/preferences-rendering.png</file>
+        <file>images/preferences-system.png</file>
+        <file>images/preferences-plugin.png</file>
     </qresource>
 </RCC>
