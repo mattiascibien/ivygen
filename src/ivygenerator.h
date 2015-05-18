@@ -56,7 +56,12 @@ private:
     QAction *aboutAction;
     QAction *aboutQtAction;
 
+    //DockWidgets
+    QDockWidget *growWidget;
+    QDockWidget *birthWidget;
+
     void setupActions();
+
 
 public slots:
     void onImportObj();

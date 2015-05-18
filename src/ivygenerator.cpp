@@ -42,13 +42,13 @@ IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
     Common::birthWidget = new BirthWidget();
 
 
-    QDockWidget *growWidget = new QDockWidget("Settings", this);
+    growWidget = new QDockWidget("Settings", this);
 
     growWidget->setWidget(Common::setupWidget);
 
     addDockWidget(Qt::RightDockWidgetArea, growWidget, Qt::Vertical);
 
-    QDockWidget *birthWidget = new QDockWidget("Birth", this);
+    birthWidget = new QDockWidget("Birth", this);
 
     birthWidget->setWidget(Common::birthWidget);
 
@@ -95,6 +95,11 @@ void IvyGeneratorWindow::setupActions()
     wireframeAction->setCheckable(true);
     connect(wireframeAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleWireframe(bool)));
     viewMenu->addAction(wireframeAction);
+
+    viewMenu->addSeparator();
+
+    viewMenu->addAction(growWidget->toggleViewAction());
+    viewMenu->addAction(birthWidget->toggleViewAction());
 
     QMenu *helpMenu = menuBar()->addMenu("&Help");
 
