@@ -29,37 +29,13 @@
 
 
 /** a class for loading an OBJ file into a Mesh object */
-class OBJLoader  
+class ModelLoader  
 {
 
 public:
 
 	/** loads OBJ data from a file and stores it within a Mesh object */
 	static bool loadOBJ( const std::string &path, const std::string &file, BasicMesh &model );
-
-private:
-
-	static bool parseOBJMaterialLibrary( BasicMesh &modelObj );
-
-	static void parseOBJMaterial( BasicMesh &modelObj );
-
-	static void parseOBJVertex( BasicMesh &modelObj );
-
-	static void parseOBJNormal( BasicMesh &modelObj );
-
-	static void parseOBJTexCoord( BasicMesh &modelObj );
-
-	static void parseOBJFace( BasicMesh &modelObj );
-
-	static void extractVertexInfo(std::string &v, unsigned int &vid, unsigned int &nid, unsigned int &tid);
-
-private:
-
-	/** the associated filestream */
-	static std::ifstream fileStream;
-
-	/** the currently used material when a face section is parsed */
-	static BasicMaterial *currentMaterial;
 };
 
 #endif

@@ -21,7 +21,7 @@
 
 #include "ivygenerator.h"
 #include "Common.h"
-#include "OBJLoader.h"
+#include "ModelLoader.h"
 #include "OBJWriter.h"
 
 
@@ -123,7 +123,7 @@ void IvyGeneratorWindow::onImportObj()
         Common::mesh.reset();
 
 
-        OBJLoader::loadOBJ( path.toStdString(), file.toStdString(), Common::mesh );
+        ModelLoader::loadOBJ( path.toStdString(), file.toStdString(), Common::mesh );
 
 
         Common::mesh.loadTextures();

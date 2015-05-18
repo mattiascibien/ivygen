@@ -7,14 +7,18 @@ HEADERS += \
     src/Common.h \
     src/Ivy.h \
     src/ivygenerator.h \
-    src/OBJLoader.h \
     src/OBJWriter.h \
     src/RenderWidget.h \
     src/SetupWidget.h \
     src/Vector2d.h \
     src/Vector3d.h \
     src/aboutdialog.h \
-    src/birthwidget.h
+    src/birthwidget.h \
+    src/objloader/list.h \
+    src/objloader/obj_parser.h \
+    src/objloader/objLoader.h \
+    src/objloader/string_extra.h \
+    src/ModelLoader.h
 
 SOURCES += \
     src/BasicMesh.cpp \
@@ -23,12 +27,16 @@ SOURCES += \
     src/Ivy.cpp \
     src/ivygenerator.cpp \
     src/main.cpp \
-    src/OBJLoader.cpp \
     src/OBJWriter.cpp \
     src/RenderWidget.cpp \
     src/SetupWidget.cpp \
     src/aboutdialog.cpp \
-    src/birthwidget.cpp
+    src/birthwidget.cpp \
+    src/objloader/list.cpp \
+    src/objloader/obj_parser.cpp \
+    src/objloader/objLoader.cpp \
+    src/objloader/string_extra.cpp \
+    src/ModelLoader.cpp
 
 RC_FILE = resources/ivygen.rc
 
