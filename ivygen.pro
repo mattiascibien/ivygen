@@ -22,7 +22,8 @@ HEADERS += \
     src/gui/SetupWidget.h \
     src/gui/aboutdialog.h \
     src/gui/birthwidget.h \
-    src/gui/colorpickerwidget.h
+    src/gui/colorpickerwidget.h \
+    src/extensibility/importerplugin.h
 
 SOURCES += \
     src/core/BasicMesh.cpp \
@@ -42,7 +43,8 @@ SOURCES += \
     src/gui/birthwidget.cpp \
     src/gui/colorpickerwidget.cpp \
     src/gui/settingsdialog.cpp \
-    src/main.cpp
+    src/main.cpp \
+    src/extensibility/importerplugin.cpp
 
 RC_FILE = resources/ivygen.rc
 
