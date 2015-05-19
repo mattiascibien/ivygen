@@ -1,3 +1,4 @@
 {
-    "Keys" : [ ]
+    "name": "ObjImporter",
+    "version": "0.0.1"
 }

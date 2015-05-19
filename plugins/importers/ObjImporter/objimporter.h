@@ -3,13 +3,14 @@
 
 #include <QGenericPlugin>
 
+#include <extensibility/importerplugin.h>
 
-class ObjImporter : public QGenericPlugin
+
+class ObjImporter : public ImporterPlugin
 {
+    Q_INTERFACES(ImporterPlugin)
     Q_OBJECT
-#if QT_VERSION >= 0x050000
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QGenericPluginFactoryInterface" FILE "ObjImporter.json")
-#endif // QT_VERSION >= 0x050000
+    Q_PLUGIN_METADATA(IID "com.ivygen.importerplugin" FILE "ObjImporter.json")
 
 public:
     ObjImporter(QObject *parent = 0);

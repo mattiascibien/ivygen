@@ -10,14 +10,14 @@ TARGET = ObjImporter
 TEMPLATE = lib
 CONFIG += plugin
 
-DESTDIR = $$[QT_INSTALL_PLUGINS]/generic
+INCLUDEPATH += ../../../src/
 
 SOURCES += objimporter.cpp
 
 HEADERS += objimporter.h
 DISTFILES += ObjImporter.json
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
+#unix {
+#    target.path = /usr/lib
+#    INSTALLS += target
+#}
