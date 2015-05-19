@@ -1,6 +1,3 @@
-include(../../qmake/gitversion.pri)
-include(../../qmake/deployqt.pri)
-
 INCLUDEPATH += .
 
 HEADERS += \
@@ -62,3 +59,7 @@ else:unix: LIBS += -L$$OUT_PWD/../core/ -lcore
 
 INCLUDEPATH += $$PWD/../core
 DEPENDPATH += $$PWD/../core
+
+
+include(../../qmake/gitversion.pri)
+include(../../qmake/deployqt.pri)
