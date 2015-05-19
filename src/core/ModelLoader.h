@@ -27,9 +27,11 @@
 #include <fstream>
 #include "BasicMesh.h"
 
+#include "core_global.h"
+
 
 /** a class for loading an OBJ file into a Mesh object */
-class ModelLoader  
+class CORESHARED_EXPORT ModelLoader
 {
 
 public:

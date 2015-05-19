@@ -20,7 +20,7 @@
 
 
 #include "RenderWidget.h"
-#include <core/Common.h>
+#include "Common.h"
 #include <limits>
 
 #include <GL/gl.h>

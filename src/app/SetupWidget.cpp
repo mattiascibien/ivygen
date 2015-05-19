@@ -20,7 +20,7 @@
 
 
 #include "SetupWidget.h"
-#include <core/Common.h>
+#include "Common.h"
 
 
 SetupWidget::SetupWidget(QWidget *parent) : QWidget(parent)

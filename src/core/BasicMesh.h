@@ -27,9 +27,11 @@
 #include <vector>
 #include <string>
 
+#include "core_global.h"
+
 
 /** a simple vertex */
-class BasicVertex
+class CORESHARED_EXPORT BasicVertex
 {
 public:
 
@@ -38,7 +40,7 @@ public:
 
 
 /** a simple normal vector */
-class BasicNormal
+class CORESHARED_EXPORT BasicNormal
 {
 public:
 
@@ -47,7 +49,7 @@ public:
 
 
 /** a simple uv texture coordinate */
-class BasicTexCoord
+class CORESHARED_EXPORT BasicTexCoord
 {
 public:
 
@@ -56,7 +58,7 @@ public:
 
 
 /** a simple material containing only a single texture */
-class BasicMaterial
+class CORESHARED_EXPORT BasicMaterial
 {
 public:
 
@@ -73,7 +75,7 @@ public:
 
 
 /** a simple triangle containing vertices, normals, texCoords, and a material */
-class BasicTriangle
+class CORESHARED_EXPORT BasicTriangle
 {
 public:
 
@@ -117,7 +119,7 @@ public:
 
 
 /** a simple triangle mesh */
-class BasicMesh
+class CORESHARED_EXPORT BasicMesh
 {
 public:
 

@@ -2,7 +2,7 @@
 
 #include <QVBoxLayout>
 
-#include <core/Common.h>
+#include "Common.h"
 
 BirthWidget::BirthWidget(QWidget *parent) : QWidget(parent)
 {

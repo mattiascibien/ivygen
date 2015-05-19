@@ -28,9 +28,11 @@
 #include "Vector3d.h"
 #include "BasicMesh.h"
 
+#include "core_global.h"
+
 
 /** a simple camera class providing camera position and alignment */
-class Camera
+class CORESHARED_EXPORT Camera
 {
 
 public:

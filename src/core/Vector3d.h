@@ -27,8 +27,10 @@
 #include <cstdlib>
 #include <limits>
 
+#include "core_global.h"
 
-class Vector3d
+
+class CORESHARED_EXPORT Vector3d
 {
 public:
 

@@ -22,8 +22,8 @@
 #ifndef IVY_H
 #define IVY_H
 
-#include "Vector3d.h"
-#include "BasicMesh.h"
+#include <Vector3d.h>
+#include <BasicMesh.h>
 #include <vector>
 
 

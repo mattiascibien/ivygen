@@ -3,9 +3,11 @@
 
 #include <QObject>
 
-#include <core/BasicMesh.h>
+#include "BasicMesh.h"
 
-class ImporterPlugin : public QObject
+#include "core_global.h"
+
+class CORESHARED_EXPORT ImporterPlugin : public QObject
 {
     Q_OBJECT
 public:

@@ -26,8 +26,10 @@
 #include "BasicMesh.h"
 #include <string>
 
+#include "core_global.h"
 
-class OBJWriter
+
+class CORESHARED_EXPORT OBJWriter
 {
 
 public:
