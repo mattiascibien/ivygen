@@ -7,7 +7,6 @@ HEADERS += \
     birthwidget.h \
     colorpickerwidget.h \
     SetupWidget.h \
-    BirthWidget.h \
     RenderWidget.h \
     Ivy.h \
     Common.h \
@@ -19,7 +18,6 @@ SOURCES += \
     colorpickerwidget.cpp \
     settingsdialog.cpp \
     SetupWidget.cpp \
-    BirthWidget.cpp \
     RenderWidget.cpp \
     Ivy.cpp \
     Common.cpp \
