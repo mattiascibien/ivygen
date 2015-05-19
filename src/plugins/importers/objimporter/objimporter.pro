@@ -12,9 +12,17 @@ CONFIG += plugin
 
 #DESTDIR = $$[QT_INSTALL_PLUGINS]/importers
 
-SOURCES += objimporter.cpp
+SOURCES += objimporter.cpp \
+    objloader/list.cpp \
+    objloader/obj_parser.cpp \
+    objloader/objLoader.cpp \
+    objloader/string_extra.cpp
 
-HEADERS += objimporter.h
+HEADERS += objimporter.h \
+    objloader/list.h \
+    objloader/obj_parser.h \
+    objloader/objLoader.h \
+    objloader/string_extra.h
 DISTFILES += objimporter.json
 
 unix {

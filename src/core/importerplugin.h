@@ -12,7 +12,7 @@ class CORESHARED_EXPORT ImporterPlugin : public QObject
     Q_OBJECT
 public:
     explicit ImporterPlugin(QObject *parent = 0);
-    virtual void load( const std::string &path, const std::string &file, BasicMesh &model  ) = 0;
+    virtual bool load( const std::string &path, const std::string &file, BasicMesh &model  ) = 0;
 
 signals:
 

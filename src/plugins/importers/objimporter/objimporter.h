@@ -12,7 +12,7 @@ class ObjImporter : public ImporterPlugin
 
 public:
     ObjImporter(QObject *parent = 0);
-    void load( const std::string &path, const std::string &file, BasicMesh &model  );
+    bool load( const std::string &path, const std::string &file, BasicMesh &model  );
 };
 
 #endif // OBJIMPORTER_H

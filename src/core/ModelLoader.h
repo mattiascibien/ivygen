@@ -37,7 +37,7 @@ class CORESHARED_EXPORT ModelLoader
 public:
 
 	/** loads OBJ data from a file and stores it within a Mesh object */
-	static bool loadOBJ( const std::string &path, const std::string &file, BasicMesh &model );
+    static bool load( const std::string &path, const std::string &file, BasicMesh &model );
 };
 
 #endif

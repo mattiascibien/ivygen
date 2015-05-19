@@ -28,7 +28,7 @@
 #include <QDir>
 
 
-bool ModelLoader::loadOBJ( const std::string &path, const std::string &file, BasicMesh &model  )
+bool ModelLoader::load( const std::string &path, const std::string &file, BasicMesh &model  )
 {
     objLoader loader;
     QDir::setCurrent(QString::fromStdString(path));

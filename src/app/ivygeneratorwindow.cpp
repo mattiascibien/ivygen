@@ -122,7 +122,7 @@ void IvyGeneratorWindow::setupActions()
 
 void IvyGeneratorWindow::onImportObj()
 {
-    QString fileString = QFileDialog::getOpenFileName(NULL, "Open 3D Model", "", "Wavefront Obj (*.obj)");
+    QString fileString = QFileDialog::getOpenFileName(NULL, "Open 3D Model", "", "Wavefront Obj (*.obj);;All Files (*.*)");
 
     if (fileString != "")
     {
@@ -130,13 +130,13 @@ void IvyGeneratorWindow::onImportObj()
 
         QString path = fileInfo.path() + "/";
 
-        QString file = fileInfo.completeBaseName() + ".obj";
+        QString file = fileInfo.fileName();
 
 
         Common::mesh.reset();
 
 
-        ModelLoader::loadOBJ( path.toStdString(), file.toStdString(), Common::mesh );
+        ModelLoader::load( path.toStdString(), file.toStdString(), Common::mesh );
 
 
         Common::mesh.loadTextures();
