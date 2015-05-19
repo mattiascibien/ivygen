@@ -47,7 +47,7 @@
          <string>General</string>
         </property>
         <property name="icon">
-         <iconset resource="../resources/ivygen.qrc">
+         <iconset resource="../../resources/ivygen.qrc">
           <normaloff>:/resources/images/preferences-system.png</normaloff>:/resources/images/preferences-system.png</iconset>
         </property>
         <property name="flags">
@@ -59,7 +59,7 @@
          <string>Rendering</string>
         </property>
         <property name="icon">
-         <iconset resource="../resources/ivygen.qrc">
+         <iconset resource="../../resources/ivygen.qrc">
           <normaloff>:/resources/images/preferences-rendering.png</normaloff>:/resources/images/preferences-rendering.png</iconset>
         </property>
        </item>
@@ -68,7 +68,7 @@
          <string>Plugins</string>
         </property>
         <property name="icon">
-         <iconset resource="../resources/ivygen.qrc">
+         <iconset resource="../../resources/ivygen.qrc">
           <normaloff>:/resources/images/preferences-plugin.png</normaloff>:/resources/images/preferences-plugin.png</iconset>
         </property>
        </item>
@@ -152,12 +152,12 @@
   <customwidget>
    <class>ColorPickerWidget</class>
    <extends>QWidget</extends>
-   <header location="global">colorpickerwidget.h</header>
+   <header location="global">gui/colorpickerwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../resources/ivygen.qrc"/>
+  <include location="../../resources/ivygen.qrc"/>
  </resources>
  <connections>
   <connection>

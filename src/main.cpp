@@ -20,7 +20,7 @@
 
 
 #include <QApplication>
-#include "ivygenerator.h"
+#include <gui/ivygenerator.h>
 
 
 int main(int argc, char *argv[])

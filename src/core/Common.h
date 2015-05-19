@@ -26,9 +26,9 @@
 #include "BasicMesh.h"
 #include "Camera.h"
 #include "Ivy.h"
-#include "RenderWidget.h"
-#include "SetupWidget.h"
-#include "birthwidget.h"
+#include <gui/RenderWidget.h>
+#include <gui/SetupWidget.h>
+#include <gui/birthwidget.h>
 
 
 /** general class for global object and attributes */

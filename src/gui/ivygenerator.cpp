@@ -20,9 +20,9 @@
 
 
 #include "ivygenerator.h"
-#include "Common.h"
-#include "ModelLoader.h"
-#include "OBJWriter.h"
+#include <core/Common.h>
+#include <core/ModelLoader.h>
+#include <core/OBJWriter.h>
 
 
 #include "aboutdialog.h"

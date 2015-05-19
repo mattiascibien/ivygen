@@ -4,45 +4,45 @@ include(./qmake/deployqt.pri)
 INCLUDEPATH += src
 
 HEADERS += \
-    src/BasicMesh.h \
-    src/Camera.h \
-    src/Common.h \
-    src/Ivy.h \
-    src/ivygenerator.h \
-    src/OBJWriter.h \
-    src/RenderWidget.h \
-    src/SetupWidget.h \
-    src/Vector2d.h \
-    src/Vector3d.h \
-    src/aboutdialog.h \
-    src/birthwidget.h \
+    src/core/BasicMesh.h \
+    src/core/Camera.h \
+    src/core/Common.h \
+    src/core/Ivy.h \
+    src/core/ModelLoader.h \
+    src/core/OBJWriter.h \
+    src/core/math/Vector2d.h \
+    src/core/math/Vector3d.h \
     src/objloader/list.h \
     src/objloader/obj_parser.h \
     src/objloader/objLoader.h \
     src/objloader/string_extra.h \
-    src/ModelLoader.h \
-    src/settingsdialog.h \
-    src/colorpickerwidget.h
+    src/gui/ivygenerator.h \
+    src/gui/settingsdialog.h \
+    src/gui/RenderWidget.h \
+    src/gui/SetupWidget.h \
+    src/gui/aboutdialog.h \
+    src/gui/birthwidget.h \
+    src/gui/colorpickerwidget.h
 
 SOURCES += \
-    src/BasicMesh.cpp \
-    src/Camera.cpp \
-    src/Common.cpp \
-    src/Ivy.cpp \
-    src/ivygenerator.cpp \
-    src/main.cpp \
-    src/OBJWriter.cpp \
-    src/RenderWidget.cpp \
-    src/SetupWidget.cpp \
-    src/aboutdialog.cpp \
-    src/birthwidget.cpp \
+    src/core/BasicMesh.cpp \
+    src/core/Camera.cpp \
+    src/core/Common.cpp \
+    src/core/Ivy.cpp \
+    src/core/ModelLoader.cpp \
+    src/core/OBJWriter.cpp \
     src/objloader/list.cpp \
     src/objloader/obj_parser.cpp \
     src/objloader/objLoader.cpp \
     src/objloader/string_extra.cpp \
-    src/ModelLoader.cpp \
-    src/settingsdialog.cpp \
-    src/colorpickerwidget.cpp
+    src/gui/ivygenerator.cpp \
+    src/gui/RenderWidget.cpp \
+    src/gui/SetupWidget.cpp \
+    src/gui/aboutdialog.cpp \
+    src/gui/birthwidget.cpp \
+    src/gui/colorpickerwidget.cpp \
+    src/gui/settingsdialog.cpp \
+    src/main.cpp
 
 RC_FILE = resources/ivygen.rc
 
@@ -65,9 +65,9 @@ unix {
 }
 
 FORMS += \
-    src/aboutdialog.ui \
-    src/settingsdialog.ui \
-    src/colorpickerwidget.ui
+    src/gui/aboutdialog.ui \
+    src/gui/settingsdialog.ui \
+    src/gui/colorpickerwidget.ui
 
 RESOURCES += \
     resources/ivygen.qrc
