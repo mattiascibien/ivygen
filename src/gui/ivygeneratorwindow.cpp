@@ -19,7 +19,7 @@
 ***************************************************************************************/
 
 
-#include "ivygenerator.h"
+#include "ivygeneratorwindow.h"
 #include <core/Common.h>
 #include <core/ModelLoader.h>
 #include <core/OBJWriter.h>

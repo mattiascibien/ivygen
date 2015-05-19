@@ -16,7 +16,7 @@ HEADERS += \
     src/objloader/obj_parser.h \
     src/objloader/objLoader.h \
     src/objloader/string_extra.h \
-    src/gui/ivygenerator.h \
+    src/gui/ivygeneratorwindow.h \
     src/gui/settingsdialog.h \
     src/gui/RenderWidget.h \
     src/gui/SetupWidget.h \
@@ -35,7 +35,7 @@ SOURCES += \
     src/objloader/obj_parser.cpp \
     src/objloader/objLoader.cpp \
     src/objloader/string_extra.cpp \
-    src/gui/ivygenerator.cpp \
+    src/gui/ivygeneratorwindow.cpp \
     src/gui/RenderWidget.cpp \
     src/gui/SetupWidget.cpp \
     src/gui/aboutdialog.cpp \
