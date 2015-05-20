@@ -39,6 +39,7 @@ public:
 	/** export a single screenshot */
 	void writeScreen();
 
+
 public slots:
     void toggleWireframe(bool on)
     {
@@ -51,6 +52,7 @@ public slots:
         backfaceCulling = on;
         updateGL();
     }
+    void reloadColors();
 
 protected:
 
@@ -86,6 +88,9 @@ private:
 	QPoint lastPos;
 
 	unsigned int imageNr;
+
+    QColor clearColor;
+    QColor gridColor;
 };
 
 #endif

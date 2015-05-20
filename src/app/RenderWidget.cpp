@@ -26,6 +26,14 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
+#include "configuration.h"
+
+void RenderWidget::reloadColors()
+{
+    clearColor = Configuration::getInstance().getClearColor();
+    gridColor = Configuration::getInstance().getGridColor();
+    updateGL();
+}
 
 RenderWidget::RenderWidget(QWidget *parent) : QGLWidget(parent)
 {
@@ -63,6 +71,10 @@ RenderWidget::RenderWidget(QWidget *parent) : QGLWidget(parent)
 	setFormat( format );
 
 	imageNr = 0;
+
+    reloadColors();
+
+    connect(&Configuration::getInstance(), SIGNAL(settingsSaved()), this, SLOT(reloadColors()));
 }
 
 
@@ -74,7 +86,7 @@ RenderWidget::~RenderWidget()
 
 void RenderWidget::paintGL()
 {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glClearColor(clearColor.redF(), clearColor.greenF(), clearColor.blueF(), 1.0f);
 
 	glClearDepth(1.0f);
 
@@ -541,7 +553,7 @@ void RenderWidget::renderAuxiliary()
     glLineWidth(1.0f);
 
     //grid
-    glColor4f(0.6f, 0.6f, 0.6f, 1.0f);
+    glColor4f(gridColor.redF(), gridColor.greenF(), gridColor.blueF(), 1.0f);
 
 	for (float x = -1.0f; x <= 1.0f + 0.01f; x += 0.05f)
 	{

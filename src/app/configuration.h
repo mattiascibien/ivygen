@@ -4,7 +4,7 @@
 #include <QSettings>
 #include <QColor>
 
-class Configuration
+class Configuration : public QObject
 {
     Q_OBJECT
 public:
@@ -45,8 +45,8 @@ private:
 
     QSettings settings;
 
- signals:
-    settingsSaved();
+signals:
+    void settingsSaved();
 };
 
 #endif // CONFIGURATION_H
