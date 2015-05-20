@@ -31,6 +31,7 @@
 bool ModelLoader::load( const std::string &path, const std::string &file, BasicMesh &model  )
 {
     objLoader loader;
+    QString currentPath = QDir::currentPath();
     QDir::setCurrent(QString::fromStdString(path));
     int loadResult = loader.load((path + file).c_str());
 
@@ -109,5 +110,6 @@ bool ModelLoader::load( const std::string &path, const std::string &file, BasicM
         }
     }
 
+    QDir::setCurrent(currentPath);
     return loadResult == 1;
 }

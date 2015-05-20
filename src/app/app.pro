@@ -10,6 +10,7 @@ HEADERS += \
     RenderWidget.h \
     Ivy.h \
     Common.h \
+    configuration.h
 
 SOURCES += \
     ivygeneratorwindow.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     RenderWidget.cpp \
     Ivy.cpp \
     Common.cpp \
+    configuration.cpp \
     main.cpp
 
 RC_FILE = resources/ivygen.rc

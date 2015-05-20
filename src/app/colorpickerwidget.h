@@ -1,7 +1,6 @@
 #ifndef COLORPICKERWIDGET_H
 #define COLORPICKERWIDGET_H
 
-#include <QtDesigner/QtDesigner>
 #include <QWidget>
 
 

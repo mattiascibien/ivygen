@@ -12,6 +12,8 @@ CONFIG += plugin
 
 #DESTDIR = $$[QT_INSTALL_PLUGINS]/importers
 
+DEFINES += _CRT_SECURE_NO_WARNINGS
+
 SOURCES += objimporter.cpp \
     objloader/list.cpp \
     objloader/obj_parser.cpp \

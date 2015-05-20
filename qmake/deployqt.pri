@@ -17,3 +17,9 @@ win32 {
 
     QMAKE_POST_LINK = $${DEPLOY_COMMAND} $${DEPLOY_TARGET}
 }
+
+HEADERS += \
+    $$PWD/../src/app/configuration.h
+
+SOURCES += \
+    $$PWD/../src/app/configuration.cpp
