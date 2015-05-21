@@ -14,31 +14,21 @@ public:
         return instance;
     }
 
-    QColor getClearColor()
-    {
-        return settings.value("Rendering/clear_color", QColor(Qt::white)).value<QColor>();
-    }
+    //General
+    QString getExportPath();
+    void setExportPath(QString path);
 
-    QColor getGridColor()
-    {
-        return settings.value("Rendering/grid_color", QColor(Qt::gray)).value<QColor>();
-    }
+    QString getImportPath();
+    void setImportPath(QString path);
 
-    void setClearColor(QColor color)
-    {
-        settings.setValue("Rendering/clear_color", color);
-    }
+    //Rendering
+    QColor getClearColor();
+    void setClearColor(QColor color);
 
-    void setGridColor(QColor color)
-    {
-        settings.setValue("Rendering/grid_color", color);
-    }
+    QColor getGridColor();
+    void setGridColor(QColor color);
 
-    void save()
-    {
-        settings.sync();
-        emit settingsSaved();
-    }
+    void save();
 
 private:
     Configuration();

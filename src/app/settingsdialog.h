@@ -14,9 +14,11 @@ class SettingsDialog : public QDialog
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
-
 private slots:
     void on_SettingsDialog_accepted();
+    void reloadSettings();
+
+    void on_SettingsDialog_rejected();
 
 private:
     Ui::SettingsDialog *ui;
