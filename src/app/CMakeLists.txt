@@ -10,7 +10,6 @@ set(app_SOURCES
 	Common.cpp
 	configuration.cpp
 	main.cpp
-	qdarkstyle/style.qrc
 	resources/ivygen.qrc)
 
 add_executable(${CMAKE_PROJECT_NAME} ${app_SOURCES})
