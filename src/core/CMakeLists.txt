@@ -11,3 +11,8 @@ set(core_SOURCES
 add_library(core SHARED ${core_SOURCES})
 
 target_link_libraries(core Qt5::Core Qt5::OpenGL ${OPENGL_LIBRARIES})
+
+install(TARGETS core
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static)

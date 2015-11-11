@@ -15,7 +15,7 @@ before_script:
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then PATH="/usr/local/opt/qt5/bin:$PATH"; fi
 
 script:
-    - qmake -qt=qt5 src/ivygen.pro
+    - cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ .
     - make
     - make install
 
