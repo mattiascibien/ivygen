@@ -31,6 +31,6 @@ addons:
       name: "mattiascibien/ivygen"
       description: "<Your project description here>"
     notification_email: mattias@mattiascibien.net
-    build_command_prepend: "qmake -qt=qt5"
+    build_command_prepend: "cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ ."
     build_command:   "make"
     branch_pattern: coverity_scan
