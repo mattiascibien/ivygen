@@ -27,6 +27,19 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
+    QFile f(":qdarkstyle/style.qss");
+    if (!f.exists())
+    {
+        printf("Unable to set stylesheet, file not found\n");
+    }
+    else 
+    {
+        f.open(QFile::ReadOnly | QFile::Text);
+        QTextStream ts(&f);
+        application.setStyleSheet(ts.readAll());
+    }
+
+
     IvyGeneratorWindow ivyGenerator;
 
     ivyGenerator.show();
