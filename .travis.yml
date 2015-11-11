@@ -39,5 +39,6 @@ addons:
       - ubuntu-sdk-team
       - george-edison55-precise-backports
     packages:
+      - cmake-data 
       - cmake
       - qtbase5-dev
