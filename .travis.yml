@@ -1,6 +1,6 @@
 language: cpp
 
-sudo: required
+sudo: false
 
 os:
     - osx
@@ -34,3 +34,10 @@ addons:
     build_command_prepend: "cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ ."
     build_command:   "make"
     branch_pattern: coverity_scan
+  apt:
+    sources:
+      - ubuntu-sdk-team
+      - george-edison55-precise-backports
+    packages:
+      - cmake
+      - qtbase5-dev
