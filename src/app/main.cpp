@@ -26,7 +26,7 @@
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
-    application->setStyle(QStyleFactory::create("Fusion"));
+    application.setStyle(QStyleFactory::create("Fusion"));
 
     QPalette darkPalette;
     darkPalette.setColor(QPalette::Window, QColor(53,53,53));
@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
     darkPalette.setColor(QPalette::Highlight, QColor(42, 130, 218));
     darkPalette.setColor(QPalette::HighlightedText, Qt::black);
     
-    application->setPalette(darkPalette);
+    application.setPalette(darkPalette);
 
-    application->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
+    application.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
  
     IvyGeneratorWindow ivyGenerator;
