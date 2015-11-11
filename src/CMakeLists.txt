@@ -5,6 +5,8 @@ project (IvyGen)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
 find_package(OpenGL)
 
@@ -18,4 +20,4 @@ find_package(Qt5OpenGL)
 find_package(Qt5Widgets)
 
 add_subdirectory (core)
-#add_subdirectory (app)
+add_subdirectory (app)
