@@ -1,24 +1,35 @@
 #include "configuration.h"
 
 #include <QDir>
+#include <QStandardPaths>
 
 QString Configuration::getExportPath()
 {
-    return settings.value("General/export_path", "C:\\").toString();
+    return settings.value("General/export_path", QStandardPaths::HomeLocation).toString();
 }
 
 void Configuration::setExportPath(QString path)
 {
+    path = path.trimmed();
+
+    if(path.isNull() || path.isEmpty())
+        path = QStandardPaths::locate(QStandardPaths::HomeLocation, QString(), QStandardPaths::LocateDirectory);
+
     settings.setValue("General/export_path", path);
 }
 
 QString Configuration::getImportPath()
 {
-    return settings.value("General/import_path", "C:\\").toString();
+    return settings.value("General/import_path", QStandardPaths::HomeLocation).toString();
 }
 
 void Configuration::setImportPath(QString path)
 {
+    path = path.trimmed();
+
+    if(path.isNull() || path.isEmpty())
+        path = QStandardPaths::locate(QStandardPaths::HomeLocation, QString(), QStandardPaths::LocateDirectory);
+
     settings.setValue("General/import_path", path);
 }
 

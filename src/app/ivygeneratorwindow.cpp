@@ -24,9 +24,10 @@
 #include <ModelLoader.h>
 #include <OBJWriter.h>
 
-
 #include "aboutdialog.h"
 #include "settingsdialog.h"
+
+#include "configuration.h"
 
 IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -122,7 +123,7 @@ void IvyGeneratorWindow::setupActions()
 
 void IvyGeneratorWindow::onImportObj()
 {
-    QString fileString = QFileDialog::getOpenFileName(NULL, "Open 3D Model", "", "Wavefront Obj (*.obj);;All Files (*.*)");
+    QString fileString = QFileDialog::getOpenFileName(this, "Open 3D Model", Configuration::getInstance().getImportPath(), "Wavefront Obj (*.obj);;All Files (*.*)");
 
     if (fileString != "")
     {
@@ -158,7 +159,7 @@ void IvyGeneratorWindow::onImportObj()
 
 void IvyGeneratorWindow::onExportObj()
 {
-    QString fileString = QFileDialog::getSaveFileName(NULL, "Save Ivy Object", "", "Wavefront Obj (*.obj)");
+    QString fileString = QFileDialog::getSaveFileName(this, "Save Ivy Object", Configuration::getInstance().getExportPath(), "Wavefront Obj (*.obj)");
 
     if (fileString != "")
     {

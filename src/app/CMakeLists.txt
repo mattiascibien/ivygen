@@ -3,6 +3,7 @@ set(app_SOURCES
         aboutdialog.cpp
         BirthWidget.cpp
         colorpickerwidget.cpp
+        pathedit.cpp
         settingsdialog.cpp
         SetupWidget.cpp
         RenderWidget.cpp
@@ -11,7 +12,12 @@ set(app_SOURCES
         configuration.cpp
         main.cpp
         resources/ivygen.qrc
-        resources/ivygen.rc)
+        resources/ivygen.rc
+        aboutdialog.ui
+        colorpickerwidget.ui
+        pathedit.ui
+        settingsdialog.ui
+)
 
 add_executable(${CMAKE_PROJECT_NAME} ${app_SOURCES})
 
