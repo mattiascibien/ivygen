@@ -11,10 +11,10 @@ environment:
       qt: 5.5\msvc2013_64
       suffix: msvc2013
 
-    - name: win32
-      plaftorm: mingw
-      qt: 5.5\mingw492_32
-      suffix: mingw
+    #- name: win32
+    #  plaftorm: mingw
+    #  qt: 5.5\mingw492_32
+    #  suffix: mingw
 
 init:
   - set PATH=C:\Qt\%qt%\bin;%PATH%
