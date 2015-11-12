@@ -49,5 +49,5 @@ after_build:
   - 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures
   - cd c:\dev\ivygen
   
- artifacts:
+artifacts:
   - path: '*.7z'
