@@ -11,7 +11,7 @@ set(app_SOURCES
         configuration.cpp
         main.cpp
         resources/ivygen.qrc
-        resources/ivygen.rc color_change.h)
+        resources/ivygen.rc)
 
 add_executable(${CMAKE_PROJECT_NAME} ${app_SOURCES})
 
