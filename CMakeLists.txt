@@ -18,5 +18,5 @@ add_subdirectory (src)
 
 install (DIRECTORY data/ DESTINATION data/)
 install (DIRECTORY textures/ DESTINATION textures/)
-install (DIRECTORY bin/ DESTINATION bin/)
-install (DIRECTORY lib/ DESTINATION lib/)
+install (DIRECTORY ${CMAKE_BINARY_DIR}/bin/ DESTINATION bin/)
+install (DIRECTORY ${CMAKE_BINARY_DIR}/lib/ DESTINATION lib/)
