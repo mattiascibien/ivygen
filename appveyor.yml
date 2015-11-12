@@ -27,7 +27,6 @@ clone_folder: c:\dev\ivygen
 before_build:
   - cd c:\dev\ivygen
   - md build-release
-  - md build-debug
 
 build_script:
   - if %platform%==mingw (set PATH="C:\Qt\%qt%\bin;C:\Qt\Tools\mingw492_32\bin;C:\Program Files (x86)\CMake\bin")
@@ -35,16 +34,12 @@ build_script:
   - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install"
   - if not %platform%==mingw (nmake) else (mingw32-make)
   - if not %platform%==mingw (nmake install) else (mingw32-make install)
-  - cd ..
-  - cd build-debug
-  - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="c:/dev/install"
-  - if not %platform%==mingw (nmake) else (mingw32-make)
-  - if not %platform%==mingw (nmake install) else (mingw32-make install)
-  - if %platform%==mingw set PATH=%ORIGPATH%
 
 after_build:
+  - cd c:\dev\install\bin
+  - windeployqt IvyGen.exe
   - cd c:\dev\install
-  - set buildname=%vlcqt_version%_build%APPVEYOR_BUILD_NUMBER%_%APPVEYOR_REPO_COMMIT:~0,7%
+  - set buildname=build%APPVEYOR_BUILD_NUMBER%_%APPVEYOR_REPO_COMMIT:~0,7%
   - 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures
   - cd c:\dev\ivygen
   
