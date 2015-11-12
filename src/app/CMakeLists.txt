@@ -1,16 +1,17 @@
-set(app_SOURCES 
-	ivygeneratorwindow.cpp
-	aboutdialog.cpp
-	BirthWidget.cpp
-	colorpickerwidget.cpp
-	settingsdialog.cpp
-	SetupWidget.cpp
-	RenderWidget.cpp
-	Ivy.cpp
-	Common.cpp
-	configuration.cpp
-	main.cpp
-	resources/ivygen.qrc)
+set(app_SOURCES
+        ivygeneratorwindow.cpp
+        aboutdialog.cpp
+        BirthWidget.cpp
+        colorpickerwidget.cpp
+        settingsdialog.cpp
+        SetupWidget.cpp
+        RenderWidget.cpp
+        Ivy.cpp
+        Common.cpp
+        configuration.cpp
+        main.cpp
+        resources/ivygen.qrc
+        resources/ivygen.rc color_change.h)
 
 add_executable(${CMAKE_PROJECT_NAME} ${app_SOURCES})
 

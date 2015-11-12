@@ -354,12 +354,12 @@ void Ivy::birth()
 
 	float gaussian[11] = {1.0f, 2.0f, 4.0f, 7.0f, 9.0f, 10.0f, 9.0f, 7.0f, 4.0f, 2.0f, 1.0f };
 
-    for(int r=0; r < roots.size(); r++)
+    for(unsigned int r=0; r < roots.size(); r++)
     {
         for(int g = 0; g <5; ++g)
         {
             IvyRoot root = roots[r];
-            for(int n=0; n < root.nodes.size(); n++)
+            for(unsigned int n=0; n < root.nodes.size(); n++)
             {
                 Vector3d e;
 
@@ -380,7 +380,7 @@ void Ivy::birth()
                root.nodes[n].smoothAdhesionVector = e / 56.0f;
             }
 
-            for(int n=0; n < root.nodes.size(); n++)
+            for(unsigned int n=0; n < root.nodes.size(); n++)
             {
                 root.nodes[n].adhesionVector = root.nodes[n].smoothAdhesionVector;
             }

@@ -115,7 +115,7 @@
  </widget>
  <resources>
   <include location="resources/ivygen.qrc"/>
-  <include location="../resources/ivygen.qrc"/>
+  <include location="resources/ivygen.qrc"/>
  </resources>
  <connections>
   <connection>

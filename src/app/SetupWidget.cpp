@@ -290,7 +290,7 @@ void SetupWidget::setIvySize(int value)
 {
 	Common::ivy.ivySize = (float)value / 20000.0f;
 
-	ivySizeLabel->setText("ivy Size: " + QString::number(Common::ivy.ivySize));
+	ivySizeLabel->setText("ivy size: " + QString::number(Common::ivy.ivySize));
 }
 
 void SetupWidget::setBranchingProbability(int value)
