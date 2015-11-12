@@ -3,14 +3,8 @@ project (IvyGen)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-add_subdirectory (src)
-
-install (DIRECTORY data/ DESTINATION data/)
-install (DIRECTORY textures/ DESTINATION textures/)
-
-
 IF (WIN32)
-    SET(APPS "\${CMAKE_INSTALL_PREFIX}/bin/${CMAKE_PROJECT_NAME}.exe")
+    SET(APPS "bin/${CMAKE_PROJECT_NAME}.exe")
     SET(DIRS ${QT_LIBRARY_DIRS})
     INSTALL(CODE "
         file(GLOB_RECURSE QTPLUGINS
@@ -19,3 +13,10 @@ IF (WIN32)
         fixup_bundle(\"${APPS}\" \"\${QTPLUGINS}\" \"${DIRS}\")
         " COMPONENT Runtime)
 ENDIF(WIN32)
+
+add_subdirectory (src)
+
+install (DIRECTORY data/ DESTINATION data/)
+install (DIRECTORY textures/ DESTINATION textures/)
+install (DIRECTORY bin/ DESTINATION bin/)
+install (DIRECTORY lib/ DESTINATION lib/)
