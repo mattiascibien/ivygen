@@ -12,7 +12,9 @@ add_library(core SHARED ${core_SOURCES})
 
 target_link_libraries(core Qt5::Core Qt5::OpenGL ${OPENGL_LIBRARIES})
 
-install(TARGETS core
-        RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib/static)
+set_target_properties(core
+		PROPERTIES
+		ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+		RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+		)
