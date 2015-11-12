@@ -20,8 +20,7 @@ init:
   - set PATH=C:\Qt\%qt%\bin;%PATH%
   - set ORIGPATH=%PATH%
   - if not %platform%==mingw call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" %platform%
-  - if not %platform%==minw (set makefiles="NMake Makefiles") else (set makefiles="MinGW Makefiles")
-  - if %APPVEYOUR_REPO_TAG%==true (set nogitinfo=ON) else (set nogitinfo=OFF)
+  - if not %platform%==mingw (set makefiles="NMake Makefiles") else (set makefiles="MinGW Makefiles")
 
 clone_folder: c:\dev\ivygen
 
