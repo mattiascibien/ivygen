@@ -44,7 +44,7 @@
    <item row="8" column="3">
     <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Original Program: &lt;a href=&quot;http://graphics.uni-konstanz.de/~luft/ivy_generator/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://graphics.uni-konstanz.de/~luft/ivy_generator/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Original Program: &lt;a href=&quot;http://graphics.uni-konstanz.de/~luft/ivy_generator/&quot;&gt;http://graphics.uni-konstanz.de/~luft/ivy_generator/&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>
@@ -57,14 +57,14 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../resources/ivygen.qrc">:/resources/images/icon_big.png</pixmap>
+      <pixmap resource="resources/ivygen.qrc">:/resources/images/icon_big.png</pixmap>
      </property>
     </widget>
    </item>
    <item row="7" column="3">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://mattiascibien.net/ivygen/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://mattiascibien.net/ivygen/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://mattiascibien.net/projects/#ivygen&quot;&gt;http://mattiascibien.net/projects/#ivygen&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>
@@ -114,6 +114,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="resources/ivygen.qrc"/>
   <include location="../resources/ivygen.qrc"/>
  </resources>
  <connections>
