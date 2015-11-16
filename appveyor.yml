@@ -29,6 +29,8 @@ before_build:
   - md build-release
 
 build_script:
+  # Workaround for CMake not wanting sh.exe on PATH for MinGW
+  - if %suffix%==mingw set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
   - if %suffix%==mingw set PATH=C:\Qt\Tools\mingw492_32\bin;%PATH%
   - cd build-release
   - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install"
