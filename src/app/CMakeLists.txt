@@ -10,6 +10,7 @@ set(app_SOURCES
         Ivy.cpp
         Common.cpp
         configuration.cpp
+        plugin_loader.cpp
         main.cpp
         resources/ivygen.qrc
         resources/ivygen.rc

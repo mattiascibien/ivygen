@@ -1,4 +1,5 @@
 set(core_SOURCES 
+        plugins/importer_interface.h
 	BasicMesh.cpp
 	Camera.cpp
 	ModelLoader.cpp
@@ -6,7 +7,7 @@ set(core_SOURCES
 	objloader/list.cpp
 	objloader/obj_parser.cpp
 	objloader/objLoader.cpp
-	objloader/string_extra.cpp)
+        objloader/string_extra.cpp)
 
 add_library(core SHARED ${core_SOURCES})
 

@@ -1,14 +1,15 @@
 #ifndef OBJIMPORTER_H
 #define OBJIMPORTER_H
 
-#include <importerplugin.h>
+#include <plugins/importer_interface.h>
 
 
-class ObjImporter : public ImporterPlugin
+class ObjImporter : public QObject,
+                    public ImporterInterface
 {
     Q_OBJECT
-    Q_INTERFACES(ImporterPlugin)
-    Q_PLUGIN_METADATA(IID "com.ivygen.importerplugin" FILE "objimporter.json")
+    Q_INTERFACES(ImporterInterface)
+    Q_PLUGIN_METADATA(IID ImporterInterface_iid FILE "objimporter.json")
 
 public:
     ObjImporter(QObject *parent = 0);

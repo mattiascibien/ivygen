@@ -5,7 +5,7 @@
 #include <QDir>
 
 ObjImporter::ObjImporter(QObject *parent) :
-    ImporterPlugin(parent)
+    ImporterInterface()
 {
 }
 
