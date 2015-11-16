@@ -11,15 +11,15 @@ environment:
       qt: 5.5\msvc2013_64
       suffix: msvc2013
 
-    #- name: win32
-    #  plaftorm: mingw
-    #  qt: 5.5\mingw492_32
-    #  suffix: mingw
+    - name: win32
+      plaftorm: mingw
+      qt: 5.5\mingw492_32
+      suffix: mingw
 
 init:
   - set PATH=C:\Qt\%qt%\bin;%PATH%
   - set ORIGPATH=%PATH%
-  - if not %platform%==mingw (call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" %platform%)
+  - if not %platform%==mingw call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" %platform%
   - if not %platform%==mingw (set makefiles="NMake Makefiles") else (set makefiles="MinGW Makefiles")
 
 clone_folder: c:\dev\ivygen
@@ -29,7 +29,7 @@ before_build:
   - md build-release
 
 build_script:
-  - if %platform%==mingw (set PATH="C:\Qt\%qt%\bin;C:\Qt\Tools\mingw492_32\bin;C:\Program Files (x86)\CMake\bin")
+  - if %platform%==mingw set PATH="C:\Qt\%qt%\bin;C:\Qt\Tools\mingw492_32\bin;C:\Program Files (x86)\CMake\bin"
   - cd build-release
   - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install"
   - if not %platform%==mingw (nmake) else (mingw32-make)
