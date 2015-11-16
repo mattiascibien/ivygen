@@ -22,6 +22,8 @@ private slots:
 
 private:
     Ui::SettingsDialog *ui;
+
+    void populatePlugins();
 };
 
 #endif // SETTINGSDIALOG_H

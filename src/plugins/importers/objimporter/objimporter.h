@@ -14,6 +14,16 @@ class ObjImporter : public QObject,
 public:
     ObjImporter(QObject *parent = 0);
     bool load( const std::string &path, const std::string &file, BasicMesh &model  );
+
+    QString getName()
+    {
+        return "Wavefront OBJ Importer";
+    }
+
+    QString getFileExtension()
+    {
+        return "obj";
+    }
 };
 
 #endif // OBJIMPORTER_H

@@ -29,7 +29,7 @@ private:
     QDir pluginsDir;
 
     template<typename T>
-    void loadDirectory(QString directory, QList<T*> *container);
+    void loadPluginsFromDirectory(QString directory, QList<T*> *container);
 
     QList<ImporterInterface*> *importers;
 };

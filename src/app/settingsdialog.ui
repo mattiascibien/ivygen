@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>IvyGen Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -90,7 +90,7 @@
       <enum>QFrame::Panel</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QFormLayout" name="formLayout_2">
@@ -165,7 +165,7 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QListView" name="listView"/>
+            <widget class="QListWidget" name="importersListWidget"/>
            </item>
           </layout>
          </widget>

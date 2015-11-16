@@ -2,6 +2,7 @@
 #include "ui_settingsdialog.h"
 
 #include "configuration.h"
+#include "plugin_loader.h"
 
 void SettingsDialog::reloadSettings()
 {
@@ -17,8 +18,11 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
+    populatePlugins();
 
     reloadSettings();
+
+    ui->stackedWidget->setCurrentIndex(0);
 
     connect(&Configuration::getInstance(), SIGNAL(settingsSaved()), this, SLOT(reloadSettings()));
 }
@@ -45,4 +49,14 @@ void SettingsDialog::on_SettingsDialog_rejected()
 {
     //Save without updating so it triggers the settingsChanged signal
     Configuration::getInstance().save();
+}
+
+void SettingsDialog::populatePlugins()
+{
+    QList<ImporterInterface*> *importers = PluginLoader::getInstance().getImporters();
+
+    for(ImporterInterface* importer : *importers)
+    {
+        ui->importersListWidget->addItem(importer->getName());
+    }
 }

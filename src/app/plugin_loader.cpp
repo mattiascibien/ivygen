@@ -9,7 +9,7 @@ void PluginLoader::loadImporters()
 {
     importers = new QList<ImporterInterface*>();
 
-    loadDirectory("importers", importers);
+    loadPluginsFromDirectory("importers", importers);
 }
 
 PluginLoader::PluginLoader()
@@ -27,7 +27,7 @@ PluginLoader::PluginLoader()
 }
 
 template<typename T>
-void PluginLoader::loadDirectory(QString directory, QList<T*> *container)
+void PluginLoader::loadPluginsFromDirectory(QString directory, QList<T*> *container)
 {
     pluginsDir.cd(directory);
 
