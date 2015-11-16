@@ -5,11 +5,11 @@
 
 #include <QMessageBox>
 
-#include <plugins/importer_interface.h>
-
 void PluginLoader::loadImporters()
 {
-    loadDirectory("importers");
+    importers = new QList<ImporterInterface*>();
+
+    loadDirectory("importers", importers);
 }
 
 PluginLoader::PluginLoader()
@@ -26,7 +26,8 @@ PluginLoader::PluginLoader()
     pluginsDir.cd("plugins");
 }
 
-void PluginLoader::loadDirectory(QString directory)
+template<typename T>
+void PluginLoader::loadDirectory(QString directory, QList<T*> *container)
 {
     pluginsDir.cd(directory);
 
@@ -36,7 +37,9 @@ void PluginLoader::loadDirectory(QString directory)
         QObject *plugin = loader.instance();
         if (plugin)
         {
-
+            T* iPlugin = qobject_cast<T*>(plugin);
+            if(iPlugin)
+                container->append(iPlugin);
         }
     }
 
