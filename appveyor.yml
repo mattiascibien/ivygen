@@ -40,7 +40,7 @@ after_build:
   - windeployqt IvyGen.exe
   - cd c:\dev\install
   - set buildname=build%APPVEYOR_BUILD_NUMBER%_%APPVEYOR_REPO_COMMIT:~0,7%
-  - 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures
+  - 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures plugins
   - cd c:\dev\ivygen
   
 artifacts:
