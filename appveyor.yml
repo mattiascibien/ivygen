@@ -29,7 +29,7 @@ before_build:
   - md build-release
 
 build_script:
-  - if %suffix%==mingw set PATH="C:\Qt\%qt%\bin;C:\Qt\Tools\mingw492_32\bin;C:\Program Files (x86)\CMake\bin"
+  - if %suffix%==mingw set PATH=C:\Qt\Tools\mingw492_32\bin;%PATH%
   - cd build-release
   - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install"
   - if not %suffix%==mingw (nmake) else (mingw32-make)

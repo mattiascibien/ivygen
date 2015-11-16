@@ -14,6 +14,10 @@ IF (WIN32)
         " COMPONENT Runtime)
 ENDIF(WIN32)
 
+IF (MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+ENDIF(MSVC)
+
 add_subdirectory (src)
 
 install (DIRECTORY data/ DESTINATION data/)
