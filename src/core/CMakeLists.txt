@@ -11,6 +11,7 @@ set(core_SOURCES
 
 add_library(core SHARED ${core_SOURCES})
 
+target_compile_features(core PRIVATE cxx_nullptr)
 target_compile_definitions(core PRIVATE -DCORE_LIBRARY)
 target_link_libraries(core Qt5::Core Qt5::OpenGL ${OPENGL_LIBRARIES})
 

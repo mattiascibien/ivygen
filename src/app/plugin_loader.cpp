@@ -5,11 +5,13 @@
 
 #include <QMessageBox>
 
-void PluginLoader::loadImporters()
+QList<ImporterInterface*>* PluginLoader::loadImporters()
 {
     importers = new QList<ImporterInterface*>();
 
     loadPluginsFromDirectory("importers", importers);
+
+    return importers;
 }
 
 PluginLoader::PluginLoader()

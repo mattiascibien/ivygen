@@ -23,6 +23,7 @@
 #include "ivygeneratorwindow.h"
 
 #include "plugin_loader.h"
+#include <ModelLoader.h>
 
 int main(int argc, char *argv[])
 {
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
 
     application.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
-    PluginLoader::getInstance().loadImporters();
+    ModelLoader::initializeImporters(PluginLoader::getInstance().loadImporters());
  
     IvyGeneratorWindow ivyGenerator;
 

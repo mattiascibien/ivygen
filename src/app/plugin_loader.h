@@ -16,7 +16,7 @@ public:
         return instance;
     }
 
-    void loadImporters();
+    QList<ImporterInterface*> *loadImporters();
 
     QList<ImporterInterface*> *getImporters()
     {
