@@ -3,11 +3,7 @@ set(core_SOURCES
 	BasicMesh.cpp
 	Camera.cpp
 	ModelLoader.cpp
-	OBJWriter.cpp
-	objloader/list.cpp
-	objloader/obj_parser.cpp
-	objloader/objLoader.cpp
-        objloader/string_extra.cpp)
+	OBJWriter.cpp)
 
 add_library(core SHARED ${core_SOURCES})
 

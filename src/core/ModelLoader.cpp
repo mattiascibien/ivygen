@@ -22,8 +22,6 @@
 #include "ModelLoader.h"
 #include "BasicMesh.h"
 
-#include "objloader/objLoader.h"
-
 #include <QMessageBox>
 #include <QDir>
 #include <QFileInfo>
