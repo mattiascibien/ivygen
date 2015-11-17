@@ -126,7 +126,9 @@ void IvyGeneratorWindow::setupActions()
 
 void IvyGeneratorWindow::onImportObj()
 {
-    QString fileString = QFileDialog::getOpenFileName(this, "Open 3D Model", Configuration::getInstance().getImportPath(), "Wavefront Obj (*.obj);;All Files (*.*)");
+    QString fileString = QFileDialog::getOpenFileName(
+                this, "Open 3D Model", Configuration::getInstance().getImportPath(),
+                                                      ModelLoader::importFilter());
 
     if (fileString != "")
     {

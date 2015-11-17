@@ -45,6 +45,16 @@ public:
     static bool load( const std::string &path, const std::string &file, BasicMesh &model );
 
     static void initializeImporters(QList<ImporterInterface*> *importers);
+
+    static QString importFilter()
+    {
+        QString out = "";
+        for(QString ext : importersMap->keys())
+        {
+            out = out.append("."+ ext + " file (*." + ext + ");;");
+        }
+        return out.append("All Files (*.*)");
+    }
 };
 
 #endif
