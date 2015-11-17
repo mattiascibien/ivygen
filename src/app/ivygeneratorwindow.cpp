@@ -66,12 +66,14 @@ void IvyGeneratorWindow::setupActions()
 {
     QMenu *fileMenu = menuBar()->addMenu("&File");
 
-    importObjMtlAction = new QAction("Import OBJ+MTL...", this);
-    connect(importObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onImportObj()));
+    importObjMtlAction = new QAction("Import...", this);
+    importObjMtlAction->setIcon(QIcon(":/resources/images/document-import.svg"));
+    connect(importObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onImportObj()));   
     fileMenu->addAction(importObjMtlAction);
 
-    exportObjMtlAction = new QAction("Export OBJ+MTL...", this);
-    connect(exportObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onExportObj()));
+    exportObjMtlAction = new QAction("Export...", this);
+    exportObjMtlAction->setIcon(QIcon(":/resources/images/document-export.svg"));
+    connect(exportObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onExportObj()));   
     fileMenu->addAction(exportObjMtlAction);
 
     fileMenu->addSeparator();
@@ -113,6 +115,7 @@ void IvyGeneratorWindow::setupActions()
     QMenu *helpMenu = menuBar()->addMenu("&Help");
 
     aboutAction = new QAction("About...", this);
+    aboutAction->setIcon(QIcon(":/resources/images/help-about.svg"));
     connect(aboutAction, SIGNAL(triggered(bool)), this, SLOT(onAbout()));
     helpMenu->addAction(aboutAction);
 

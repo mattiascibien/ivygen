@@ -52,7 +52,7 @@
       </property>
       <property name="icon">
        <iconset resource="resources/ivygen.qrc">
-        <normaloff>:/resources/images/preferences-system.png</normaloff>:/resources/images/preferences-system.png</iconset>
+        <normaloff>:/resources/images/preferences-system.svg</normaloff>:/resources/images/preferences-system.svg</iconset>
       </property>
       <property name="flags">
        <set>ItemIsSelectable|ItemIsEnabled</set>
@@ -64,7 +64,7 @@
       </property>
       <property name="icon">
        <iconset resource="resources/ivygen.qrc">
-        <normaloff>:/resources/images/preferences-rendering.png</normaloff>:/resources/images/preferences-rendering.png</iconset>
+        <normaloff>:/resources/images/preferences-rendering.svg</normaloff>:/resources/images/preferences-rendering.svg</iconset>
       </property>
      </item>
      <item>
@@ -73,7 +73,7 @@
       </property>
       <property name="icon">
        <iconset resource="resources/ivygen.qrc">
-        <normaloff>:/resources/images/preferences-plugin.png</normaloff>:/resources/images/preferences-plugin.png</iconset>
+        <normaloff>:/resources/images/preferences-plugin.svg</normaloff>:/resources/images/preferences-plugin.svg</iconset>
       </property>
      </item>
     </widget>
@@ -187,6 +187,9 @@
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>false</bool>
      </property>
     </widget>
    </item>

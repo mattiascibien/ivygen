@@ -1,8 +1,11 @@
 <RCC>
     <qresource prefix="/resources">
         <file>images/icon_big.png</file>
-        <file>images/preferences-rendering.png</file>
-        <file>images/preferences-system.png</file>
-        <file>images/preferences-plugin.png</file>
+        <file>images/preferences-plugin.svg</file>
+        <file>images/preferences-rendering.svg</file>
+        <file>images/preferences-system.svg</file>
+        <file>images/document-export.svg</file>
+        <file>images/document-import.svg</file>
+        <file>images/help-about.svg</file>
     </qresource>
 </RCC>
