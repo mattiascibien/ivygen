@@ -44,7 +44,7 @@ public:
 	/** loads OBJ data from a file and stores it within a Mesh object */
     static bool load( const std::string &path, const std::string &file, BasicMesh &model );
 
-    static bool initializeImporters(QList<ImporterInterface*> *importers);
+    static void initializeImporters(QList<ImporterInterface*> *importers);
 };
 
 #endif

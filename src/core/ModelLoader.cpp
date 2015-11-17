@@ -44,7 +44,7 @@ bool ModelLoader::load( const std::string &path, const std::string &file, BasicM
     return importer->load(path, file, model);
 }
 
-bool ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
+void ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
 {
     importersMap = new QHash<QString, ImporterInterface*>();
     for(ImporterInterface* importer : *importers)
