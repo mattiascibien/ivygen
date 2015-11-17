@@ -66,6 +66,8 @@ protected:
 
 	void mouseDoubleClickEvent(QMouseEvent *event);
 
+    void wheelEvent(QWheelEvent* event);
+
 	/** initialize projection and view matrix */
 	void setupCamera();
 

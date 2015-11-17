@@ -150,7 +150,8 @@ void RenderWidget::mouseMoveEvent(QMouseEvent *event)
 	}
 
 	//track camera (right and up vector movements)
-	if ((event->buttons() == Qt::LeftButton) && (event->modifiers() == Qt::ControlModifier))
+    if (((event->buttons() == Qt::LeftButton) && (event->modifiers() == Qt::ControlModifier))
+         || event->buttons() == Qt::MiddleButton)
 	{
 		Vector3d dir, right, up;
 
@@ -271,7 +272,18 @@ void RenderWidget::mouseDoubleClickEvent(QMouseEvent *event)
 	Common::ivy.seed(seedPoint);
 
 
-	updateGL();
+    updateGL();
+}
+
+void RenderWidget::wheelEvent(QWheelEvent *event)
+{
+    Vector3d dir, right, up;
+
+    Common::camera.computeVectorBasis(dir, right, up);
+
+    Common::camera.pos += dir * event->delta() * Common::mesh.boundingSphereRadius * 0.002f;
+
+    updateGL();
 }
 
 
