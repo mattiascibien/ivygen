@@ -6,7 +6,7 @@ today! Here are the guidelines we'd like you to follow:
 	- [Code of Conduct](#coc)
 	
 ## <a name="coc"></a> Code of Conduct
-Help us keep Angular open and inclusive. Please read and follow our [Code of Conduct][coc].
+Help us keep IvyGen open and inclusive. Please read and follow our [Code of Conduct][coc].
 
 
 
