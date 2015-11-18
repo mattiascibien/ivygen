@@ -1,4 +1,4 @@
-#include "birthwidget.h"
+#include "BirthWidget.h"
 
 #include <QVBoxLayout>
 
