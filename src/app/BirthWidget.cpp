@@ -16,7 +16,7 @@ BirthWidget::BirthWidget(QWidget *parent) : QWidget(parent)
 
     ivyLeafSizeSlider->setToolTip("defines the size of the leaf geometry relative to the ivy size");
 
-    connect(ivyLeafSizeSlider, SIGNAL(valueChanged(int)), this, SLOT(setIvyLeafSize(int)));
+    connect(ivyLeafSizeSlider, &QSlider::valueChanged, this, &BirthWidget::setIvyLeafSize);
 
 
     QSlider *ivyBranchSizeSlider = new QSlider();
@@ -29,7 +29,7 @@ BirthWidget::BirthWidget(QWidget *parent) : QWidget(parent)
 
     ivyBranchSizeSlider->setToolTip("defines the diameter of the branch geometry relative to the ivy size");
 
-    connect(ivyBranchSizeSlider, SIGNAL(valueChanged(int)), this, SLOT(setIvyBranchSize(int)));
+    connect(ivyBranchSizeSlider, &QSlider::valueChanged, this, &BirthWidget::setIvyBranchSize);
 
 
     ivyLeafSizeLabel = new QLabel();
@@ -62,12 +62,12 @@ BirthWidget::BirthWidget(QWidget *parent) : QWidget(parent)
 
     leafProbabilitySlider->setToolTip("defines the density of the leaves during geometry generation");
 
-    connect(leafProbabilitySlider, SIGNAL(valueChanged(int)), this, SLOT(setLeafProbability(int)));
+    connect(leafProbabilitySlider, &QSlider::valueChanged, this, &BirthWidget::setLeafProbability);
 
 
     QPushButton *birthButton = new QPushButton("birth");
 
-    connect(birthButton, SIGNAL(clicked()), this, SLOT(onBirth()));
+    connect(birthButton, &QPushButton::clicked, this, &BirthWidget::onBirth);
 
     birthButton->setToolTip("generate the ivy geometry");
 

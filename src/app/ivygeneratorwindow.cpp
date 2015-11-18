@@ -68,43 +68,43 @@ void IvyGeneratorWindow::setupActions()
 
     importObjMtlAction = new QAction("Import...", this);
     importObjMtlAction->setIcon(QIcon(":/resources/images/document-import.svg"));
-    connect(importObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onImportObj()));   
+    connect(importObjMtlAction, &QAction::triggered, this, &IvyGeneratorWindow::onImportObj);
     fileMenu->addAction(importObjMtlAction);
 
     exportObjMtlAction = new QAction("Export...", this);
     exportObjMtlAction->setIcon(QIcon(":/resources/images/document-export.svg"));
-    connect(exportObjMtlAction, SIGNAL(triggered(bool)), this, SLOT(onExportObj()));   
+    connect(exportObjMtlAction, &QAction::triggered, this, &IvyGeneratorWindow::onExportObj);
     fileMenu->addAction(exportObjMtlAction);
 
     fileMenu->addSeparator();
 
     exitAction = new QAction("Exit", this);
-    connect(exitAction, SIGNAL(triggered(bool)), this, SLOT(close()));
+    connect(exitAction, &QAction::triggered, this, &IvyGeneratorWindow::close);
     fileMenu->addAction(exitAction);
 
 
     QMenu *editMenu = menuBar()->addMenu("&Edit");
 
     flipNormalsAction = new QAction("Flip Normals", this);
-    connect(flipNormalsAction, SIGNAL(triggered(bool)), this, SLOT(onFlipNormals()));
+    connect(flipNormalsAction, &QAction::triggered, this, &IvyGeneratorWindow::onFlipNormals);
     editMenu->addAction(flipNormalsAction);
 
     editMenu->addSeparator();
 
     preferencesAction = new QAction("Preferences", this);
-    connect(preferencesAction, SIGNAL(triggered(bool)), this, SLOT(onPreferences()));
+    connect(preferencesAction, &QAction::triggered, this, &IvyGeneratorWindow::onPreferences);
     editMenu->addAction(preferencesAction);
 
     QMenu *viewMenu = menuBar()->addMenu("&View");
 
     backfaceCullingAction = new QAction("Backface culling", this);
     backfaceCullingAction->setCheckable(true);
-    connect(backfaceCullingAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleBackfaceCulling(bool)));
+    connect(backfaceCullingAction, &QAction::toggled, Common::renderWidget, &RenderWidget::toggleBackfaceCulling);
     viewMenu->addAction(backfaceCullingAction);
 
     wireframeAction = new QAction("Wireframe", this);
     wireframeAction->setCheckable(true);
-    connect(wireframeAction, SIGNAL(toggled(bool)), Common::renderWidget, SLOT(toggleWireframe(bool)));
+    connect(wireframeAction, &QAction::toggled, Common::renderWidget, &RenderWidget::toggleWireframe);
     viewMenu->addAction(wireframeAction);
 
     viewMenu->addSeparator();
@@ -116,11 +116,11 @@ void IvyGeneratorWindow::setupActions()
 
     aboutAction = new QAction("About...", this);
     aboutAction->setIcon(QIcon(":/resources/images/help-about.svg"));
-    connect(aboutAction, SIGNAL(triggered(bool)), this, SLOT(onAbout()));
+    connect(aboutAction, &QAction::triggered, this, &IvyGeneratorWindow::onAbout);
     helpMenu->addAction(aboutAction);
 
     aboutQtAction = new QAction("About Qt...", this);
-    connect(aboutQtAction, SIGNAL(triggered(bool)), qApp, SLOT(aboutQt()));
+    connect(aboutQtAction, &QAction::triggered, qApp, &QApplication::aboutQt);
     helpMenu->addAction(aboutQtAction);
 }
 

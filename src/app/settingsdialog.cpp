@@ -24,7 +24,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
     ui->stackedWidget->setCurrentIndex(0);
 
-    connect(&Configuration::getInstance(), SIGNAL(settingsSaved()), this, SLOT(reloadSettings()));
+    connect(&Configuration::getInstance(), &Configuration::settingsSaved, this, &SettingsDialog::reloadSettings);
 }
 
 SettingsDialog::~SettingsDialog()

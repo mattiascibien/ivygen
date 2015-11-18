@@ -79,7 +79,7 @@ RenderWidget::RenderWidget(QWidget *parent) : QGLWidget(parent)
 
     reloadColors();
 
-    connect(&Configuration::getInstance(), SIGNAL(settingsSaved()), this, SLOT(reloadColors()));
+    connect(&Configuration::getInstance(), &Configuration::settingsSaved, this, &RenderWidget::reloadColors);
 }
 
 

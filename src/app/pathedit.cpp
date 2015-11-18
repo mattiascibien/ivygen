@@ -9,8 +9,8 @@ PathEdit::PathEdit(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->lineEdit, SIGNAL(textChanged(QString)), this, SLOT(updatePath(QString)));
-    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(choosePath()));
+    connect(ui->lineEdit, &QLineEdit::textChanged, this, &PathEdit::updatePath);
+    connect(ui->pushButton, &QPushButton::clicked, this,&PathEdit::choosePath);
 }
 
 PathEdit::~PathEdit()
