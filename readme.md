@@ -1,7 +1,14 @@
-# An Ivy Generator [![Build Status](https://travis-ci.org/mattiascibien/ivygen.svg?branch=master)](https://travis-ci.org/mattiascibien/ivygen) [![Build status](https://ci.appveyor.com/api/projects/status/y2rpe8f1fc8s4reh?svg=true)](https://ci.appveyor.com/project/mattiascibien/ivygen)
+# An Ivy Generator 
 
 [![Join the chat at https://gitter.im/mattiascibien/ivygen](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mattiascibien/ivygen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## Status
+
+Windows: [![Build status](https://ci.appveyor.com/api/projects/status/y2rpe8f1fc8s4reh?svg=true)](https://ci.appveyor.com/project/mattiascibien/ivygen)
+
+MacOS: [![Build Status](https://travis-ci.org/mattiascibien/ivygen.svg?branch=master)](https://travis-ci.org/mattiascibien/ivygen) 
+
+Linux: [![Build Status](https://semaphoreci.com/api/v1/projects/5d3570fe-20ad-4824-a533-96f1d9739658/607580/shields_badge.svg)](https://semaphoreci.com/jdbastardy/ivygen)
 
 Original code Copyright (c) 2007 Thomas Luft. All rights reserved.
 
