@@ -28,7 +28,7 @@
 #include "Ivy.h"
 #include "RenderWidget.h"
 #include "SetupWidget.h"
-#include "birthwidget.h"
+#include "birth_widget.h"
 
 
 /** general class for global object and attributes */

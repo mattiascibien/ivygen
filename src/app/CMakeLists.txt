@@ -1,7 +1,7 @@
 set(app_SOURCES
         ivygeneratorwindow.cpp
         aboutdialog.cpp
-        BirthWidget.cpp
+        birth_widget.cpp
         colorpickerwidget.cpp
         pathedit.cpp
         settingsdialog.cpp
