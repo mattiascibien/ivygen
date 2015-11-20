@@ -1,5 +1,6 @@
-cmake_minimum_required (VERSION 3.0)
-project (IvyGen)
+IF(VERSION)
+    add_definitions(-DGIT_VERSION="${VERSION}")
+ENDIF(VERSION)
 
 # Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
