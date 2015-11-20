@@ -26,7 +26,7 @@
 #define PI 3.1415926535897932384626433832795f
 
 #include "Vector3d.h"
-#include "BasicMesh.h"
+#include "basic_mesh.h"
 
 #include "core_global.h"
 

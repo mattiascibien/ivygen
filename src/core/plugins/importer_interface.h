@@ -1,7 +1,7 @@
 #ifndef IMPORTERINTERFACE_H
 #define IMPORTERINTERFACE_H
 
-#include <BasicMesh.h>
+#include <basic_mesh.h>
 
 #include <QtPlugin>
 

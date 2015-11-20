@@ -19,7 +19,7 @@
 ***************************************************************************************/
 
 
-#include "SetupWidget.h"
+#include "setup_widget.h"
 #include "Common.h"
 
 

@@ -1,9 +1,9 @@
 set(core_SOURCES 
         plugins/importer_interface.h
-	BasicMesh.cpp
+        basic_mesh.cpp
 	Camera.cpp
-	ModelLoader.cpp
-	OBJWriter.cpp)
+        model_loader.cpp
+        obj_writer.cpp)
 
 add_library(core SHARED ${core_SOURCES})
 

@@ -5,8 +5,8 @@ set(app_SOURCES
         colorpickerwidget.cpp
         pathedit.cpp
         settingsdialog.cpp
-        SetupWidget.cpp
-        RenderWidget.cpp
+        setup_widget.cpp
+        render_widget.cpp
         Ivy.cpp
         Common.cpp
         configuration.cpp

@@ -23,11 +23,11 @@
 #define COMMON_H
 
 
-#include <BasicMesh.h>
+#include <basic_mesh.h>
 #include <Camera.h>
 #include "Ivy.h"
-#include "RenderWidget.h"
-#include "SetupWidget.h"
+#include "render_widget.h"
+#include "setup_widget.h"
 #include "birth_widget.h"
 
 

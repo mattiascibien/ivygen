@@ -19,35 +19,42 @@
 ***************************************************************************************/
 
 
-#include "ModelLoader.h"
-#include "BasicMesh.h"
+#ifndef OBJLOADER_H
+#define OBJLOADER_H
 
-#include <QMessageBox>
-#include <QDir>
-#include <QFileInfo>
 
-QHash<QString, ImporterInterface*> *ModelLoader::importersMap = nullptr;
+#include <string>
+#include <fstream>
+#include "basic_mesh.h"
 
-bool ModelLoader::load( const std::string &path, const std::string &file, BasicMesh &model  )
+#include "core_global.h"
+
+#include <QList>
+#include <QHash>
+#include <QString>
+#include "plugins/importer_interface.h"
+
+/** a class for loading an OBJ file into a Mesh object */
+class CORESHARED_EXPORT ModelLoader
 {
-    QFile qfile(file.c_str());
-    QFileInfo info(qfile);
+private:
+    static QHash<QString, ImporterInterface*> *importersMap;
+public:
 
-    QString extension = info.completeSuffix();
-    ImporterInterface* importer = importersMap->value(extension, nullptr);
+	/** loads OBJ data from a file and stores it within a Mesh object */
+    static bool load( const std::string &path, const std::string &file, BasicMesh &model );
 
-    if(!importer)
-        return false;
+    static void initializeImporters(QList<ImporterInterface*> *importers);
 
-    return importer->load(path, file, model);
-}
-
-void ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
-{
-    importersMap = new QHash<QString, ImporterInterface*>();
-    for(ImporterInterface* importer : *importers)
+    static QString importFilter()
     {
-        QString extension = importer->getFileExtension();
-        importersMap->insert(extension, importer);
+        QString out = "";
+        for(QString ext : importersMap->keys())
+        {
+            out = out.append("."+ ext + " file (*." + ext + ");;");
+        }
+        return out.append("All Files (*.*)");
     }
-}
+};
+
+#endif
