@@ -1,8 +1,8 @@
 # An Ivy Generator 
 
-[![Join the chat at https://gitter.im/mattiascibien/ivygen](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mattiascibien/ivygen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-## Status
+[![Join the chat at https://gitter.im/mattiascibien/ivygen](https://img.shields.io/badge/gitter-chat-blue.svg)](https://gitter.im/mattiascibien/ivygen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Stories in Ready](https://badge.waffle.io/mattiascibien/ivygen.png?label=ready&title=Ready)](http://waffle.io/mattiascibien/ivygen)
+[![Documentation Status](https://readthedocs.org/projects/ivygen/badge/?version=develop)](http://ivygen.readthedocs.org/en/develop/?badge=develop)
 
 | System        | Build         |
 | ------------- | ------------- |
