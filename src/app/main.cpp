@@ -23,7 +23,7 @@
 #include "ivygeneratorwindow.h"
 
 #include "plugin_loader.h"
-#include <ModelLoader.h>
+#include <model_loader.h>
 
 int main(int argc, char *argv[])
 {

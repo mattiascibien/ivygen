@@ -8,7 +8,7 @@ class BirthWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit BirthWidget(QWidget *parent = 0);
+    BirthWidget(QWidget *parent = 0);
 
 signals:
 

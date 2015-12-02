@@ -19,22 +19,35 @@
 ***************************************************************************************/
 
 
-#ifndef OBJWRITER_H
-#define OBJWRITER_H
+#include "model_loader.h"
+#include "basic_mesh.h"
 
+#include <QMessageBox>
+#include <QDir>
+#include <QFileInfo>
 
-#include "BasicMesh.h"
-#include <string>
+QHash<QString, ImporterInterface*> *ModelLoader::importersMap = nullptr;
 
-#include "core_global.h"
-
-
-class CORESHARED_EXPORT OBJWriter
+bool ModelLoader::load( const std::string &path, const std::string &file, BasicMesh &model  )
 {
+    QFile qfile(file.c_str());
+    QFileInfo info(qfile);
 
-public:
+    QString extension = info.completeSuffix();
+    ImporterInterface* importer = importersMap->value(extension, nullptr);
 
-	static bool writeOBJ(const std::string& path, const std::string& file, BasicMesh& modelObj);
-};
+    if(!importer)
+        return false;
 
-#endif
+    return importer->load(path, file, model);
+}
+
+void ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
+{
+    importersMap = new QHash<QString, ImporterInterface*>();
+    for(ImporterInterface* importer : *importers)
+    {
+        QString extension = importer->getFileExtension();
+        importersMap->insert(extension, importer);
+    }
+}

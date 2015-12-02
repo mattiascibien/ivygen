@@ -19,7 +19,7 @@
 ***************************************************************************************/
 
 
-#include "OBJWriter.h"
+#include "obj_writer.h"
 #include <QtWidgets>
 #include <iostream>
 #include <fstream>

@@ -21,8 +21,8 @@
 
 #include "ivygeneratorwindow.h"
 #include <Common.h>
-#include <ModelLoader.h>
-#include <OBJWriter.h>
+#include <model_loader.h>
+#include <obj_writer.h>
 
 #include "aboutdialog.h"
 #include "settingsdialog.h"

@@ -4,7 +4,6 @@ sudo: false
 
 os:
     - osx
-    - linux
 
 compiler: gcc
 
@@ -42,3 +41,5 @@ addons:
       - cmake-data 
       - cmake
       - qtbase5-dev
+      - libqt5opengl5-dev
+      

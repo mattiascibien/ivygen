@@ -19,42 +19,22 @@
 ***************************************************************************************/
 
 
-#ifndef OBJLOADER_H
-#define OBJLOADER_H
+#ifndef OBJWRITER_H
+#define OBJWRITER_H
 
 
+#include "basic_mesh.h"
 #include <string>
-#include <fstream>
-#include "BasicMesh.h"
 
 #include "core_global.h"
 
-#include <QList>
-#include <QHash>
-#include <QString>
-#include "plugins/importer_interface.h"
 
-/** a class for loading an OBJ file into a Mesh object */
-class CORESHARED_EXPORT ModelLoader
+class CORESHARED_EXPORT OBJWriter
 {
-private:
-    static QHash<QString, ImporterInterface*> *importersMap;
+
 public:
 
-	/** loads OBJ data from a file and stores it within a Mesh object */
-    static bool load( const std::string &path, const std::string &file, BasicMesh &model );
-
-    static void initializeImporters(QList<ImporterInterface*> *importers);
-
-    static QString importFilter()
-    {
-        QString out = "";
-        for(QString ext : importersMap->keys())
-        {
-            out = out.append("."+ ext + " file (*." + ext + ");;");
-        }
-        return out.append("All Files (*.*)");
-    }
+	static bool writeOBJ(const std::string& path, const std::string& file, BasicMesh& modelObj);
 };
 
 #endif

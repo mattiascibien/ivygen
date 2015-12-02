@@ -19,7 +19,7 @@
 ***************************************************************************************/
 
 
-#include "RenderWidget.h"
+#include "render_widget.h"
 #include "Common.h"
 #include <limits>
 

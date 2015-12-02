@@ -18,6 +18,7 @@ target_link_libraries(objimporter core Qt5::Core ${OPENGL_LIBRARIES})
 
 set_target_properties(objimporter
                 PROPERTIES
+		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins/importers"
                 ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins/importers"
                 RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins/importers"
                 )
