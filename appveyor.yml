@@ -24,8 +24,12 @@ init:
 
 clone_folder: c:\dev\ivygen
 
+install:
+  - choco install gitversion.portable -pre -y
+
 before_build:
   - cd c:\dev\ivygen
+  - ps: gitversion /l console /output buildserver
   - md build-release
 
 build_script:
