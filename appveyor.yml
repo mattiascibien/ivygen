@@ -4,7 +4,7 @@ environment:
     - name: win32
       platform: amd64_x86
       qt: 5.7\msvc2015
-      suffix: msvc2013
+      suffix: msvc2015
 
     - name: win64
       platform: amd64
