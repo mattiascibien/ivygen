@@ -30,6 +30,14 @@ target_link_libraries(${CMAKE_PROJECT_NAME} core Qt5::Core Qt5::Widgets Qt5::Ope
 set_target_properties(${CMAKE_PROJECT_NAME}
         PROPERTIES
 		ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-		LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+                LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 		RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
+
+IF(MSVC)
+    set_target_properties(${CMAKE_PROJECT_NAME}
+            PROPERTIES
+                WIN32_EXECUTABLE YES
+                LINK_FLAGS "/ENTRY:mainCRTStartup"
+                    )
+ENDIF(MSVC)
