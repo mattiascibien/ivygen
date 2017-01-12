@@ -47,3 +47,12 @@ void PluginLoader::loadPluginsFromDirectory(QString directory, QList<T*> *contai
 
     pluginsDir.cdUp();
 }
+
+QList<ExporterInterface *> *PluginLoader::loadExporters()
+{
+    exporters = new QList<ExporterInterface*>();
+
+    loadPluginsFromDirectory("exporters", exporters);
+
+    return exporters;
+}

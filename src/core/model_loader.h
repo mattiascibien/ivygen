@@ -33,23 +33,38 @@
 #include <QHash>
 #include <QString>
 #include "plugins/importer_interface.h"
+#include "plugins/exporter_interface.h"
 
 /** a class for loading an OBJ file into a Mesh object */
 class CORESHARED_EXPORT ModelLoader
 {
 private:
     static QHash<QString, ImporterInterface*> *importersMap;
+    static QHash<QString, ExporterInterface*> *exportersMap;
 public:
 
 	/** loads OBJ data from a file and stores it within a Mesh object */
     static bool load( const std::string &path, const std::string &file, BasicMesh &model );
 
+    static bool save( const std::string &path, const std::string &file, BasicMesh &model );
+
     static void initializeImporters(QList<ImporterInterface*> *importers);
+    static void initializeExporters(QList<ExporterInterface*> *exporters);
 
     static QString importFilter()
     {
         QString out = "";
         for(QString ext : importersMap->keys())
+        {
+            out = out.append("."+ ext + " file (*." + ext + ");;");
+        }
+        return out.append("All Files (*.*)");
+    }
+
+    static QString exportFilter()
+    {
+        QString out = "";
+        for(QString ext : exportersMap->keys())
         {
             out = out.append("."+ ext + " file (*." + ext + ");;");
         }

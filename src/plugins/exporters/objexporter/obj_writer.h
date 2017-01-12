@@ -19,19 +19,19 @@
 ***************************************************************************************/
 
 
-#include "Common.h"
+#ifndef OBJWRITER_H
+#define OBJWRITER_H
 
 
-BasicMesh Common::mesh;
+#include <core/basic_mesh.h>
+#include <string>
 
-Camera Common::camera;
+class OBJWriter
+{
 
-Ivy Common::ivy;
+public:
 
-RenderWidget *Common::renderWidget = NULL;
+	static bool writeOBJ(const std::string& path, const std::string& file, BasicMesh& modelObj);
+};
 
-SetupWidget *Common::setupWidget = NULL;
-	
-BirthWidget *Common::birthWidget = NULL;
-
-QTimer *Common::timer = NULL;
+#endif

@@ -6,25 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>213</height>
+    <width>618</width>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>About Ivy Generator</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="10" column="3">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
+   <item row="0" column="2">
     <widget class="QLabel" name="titleLabel">
      <property name="font">
       <font>
@@ -34,14 +24,17 @@
       </font>
      </property>
      <property name="text">
-      <string>Ivy Generator</string>
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources/ivygen.qrc">:/resources/images/splash.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="8" column="3">
+   <item row="6" column="2">
     <widget class="QLabel" name="label_6">
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Original Program: &lt;a href=&quot;http://graphics.uni-konstanz.de/~luft/ivy_generator/&quot;&gt;http://graphics.uni-konstanz.de/~luft/ivy_generator/&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -51,7 +44,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="3">
+   <item row="1" column="2">
     <widget class="QLabel" name="labelVersion">
      <property name="font">
       <font>
@@ -60,25 +53,48 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Copyright (c) 2007 Thomas Luft</string>
+   <item row="8" column="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
-   <item row="3" column="3">
+   <item row="3" column="2">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>Copyright (c) 2015 Mattias cibien</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="3">
+   <item row="4" column="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Copyright (c) 2007 Thomas Luft</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
     <widget class="QLabel" name="label_5">
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://mattiascibien.net/projects/#ivygen&quot;&gt;http://mattiascibien.net/projects/#ivygen&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -91,30 +107,10 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="3">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="3">
+   <item row="7" column="2">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Breeze Icon Theme by the &lt;a href=&quot;https://www.kde.org/&quot;&gt;KDE Project&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" rowspan="8">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources/ivygen.qrc">:/resources/images/icon_big.png</pixmap>
      </property>
     </widget>
    </item>

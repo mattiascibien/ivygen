@@ -27,6 +27,7 @@
 #include <QFileInfo>
 
 QHash<QString, ImporterInterface*> *ModelLoader::importersMap = nullptr;
+QHash<QString, ExporterInterface*> *ModelLoader::exportersMap = nullptr;
 
 bool ModelLoader::load( const std::string &path, const std::string &file, BasicMesh &model  )
 {
@@ -42,6 +43,20 @@ bool ModelLoader::load( const std::string &path, const std::string &file, BasicM
     return importer->load(path, file, model);
 }
 
+bool ModelLoader::save(const std::string &path, const std::string &file, BasicMesh &model)
+{
+    QFile qfile(file.c_str());
+    QFileInfo info(qfile);
+
+    QString extension = info.completeSuffix();
+    ExporterInterface* exporter = exportersMap->value(extension, nullptr);
+
+    if(!exporter)
+        return false;
+
+    return exporter->save(path, file, model);
+}
+
 void ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
 {
     importersMap = new QHash<QString, ImporterInterface*>();
@@ -49,5 +64,15 @@ void ModelLoader::initializeImporters(QList<ImporterInterface*> *importers)
     {
         QString extension = importer->getFileExtension();
         importersMap->insert(extension, importer);
+    }
+}
+
+void ModelLoader::initializeExporters(QList<ExporterInterface*> *exporters)
+{
+    exportersMap = new QHash<QString, ExporterInterface*>();
+    for(ExporterInterface* exporter : *exporters)
+    {
+        QString extension = exporter->getFileExtension();
+        exportersMap->insert(extension, exporter);
     }
 }

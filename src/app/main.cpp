@@ -23,11 +23,13 @@
 #include "ivygeneratorwindow.h"
 
 #include "plugin_loader.h"
-#include <model_loader.h>
+#include <core/model_loader.h>
 
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
+    QPixmap pixmap(":/resources/images/splash.png");
+
     application.setStyle(QStyleFactory::create("Fusion"));
 
     QPalette darkPalette;
@@ -48,14 +50,23 @@ int main(int argc, char *argv[])
     
     application.setPalette(darkPalette);
 
+    QSplashScreen splash(pixmap);
+    splash.show();
+    application.processEvents();
+
     application.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
+    splash.showMessage("Loading importer plugins...", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
+    application.processEvents();
     ModelLoader::initializeImporters(PluginLoader::getInstance().loadImporters());
- 
-    IvyGeneratorWindow ivyGenerator;
+    ModelLoader::initializeExporters(PluginLoader::getInstance().loadExporters());
 
+    splash.showMessage("Done loading.", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
+    application.processEvents();
+
+    IvyGeneratorWindow ivyGenerator;
     ivyGenerator.show();
-	
+    splash.finish(&ivyGenerator);
     application.connect(&application, &QApplication::lastWindowClosed, &application, &QApplication::quit);
 
     return application.exec();

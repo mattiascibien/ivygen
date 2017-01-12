@@ -19,22 +19,46 @@
 ***************************************************************************************/
 
 
-#ifndef OBJWRITER_H
-#define OBJWRITER_H
+#ifndef COMMON_H
+#define COMMON_H
 
 
-#include "basic_mesh.h"
-#include <string>
+#include <core/basic_mesh.h>
+#include <core/camera.h>
+#include "ivy.h"
+#include "render_widget.h"
+#include "setup_widget.h"
+#include "birth_widget.h"
 
-#include "core_global.h"
 
-
-class CORESHARED_EXPORT OBJWriter
+/** general class for global object and attributes */
+class Common
 {
 
 public:
 
-	static bool writeOBJ(const std::string& path, const std::string& file, BasicMesh& modelObj);
+	/** the scene mesh that the ivy could climb */
+	static BasicMesh mesh;
+
+	/** the general camera */
+	static Camera camera;
+
+	/** the ivy object, derived from BasicMesh */
+	static Ivy ivy;
+
+	/** the opengl rendering widget */
+	static RenderWidget *renderWidget;
+
+    /** the grow widget right-hand */
+	static SetupWidget *setupWidget;
+
+    /** the birth widget right-hand */
+    static BirthWidget *birthWidget;
+
+    static QTimer *timer;
 };
 
+
 #endif
+
+

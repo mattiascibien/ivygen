@@ -4,7 +4,8 @@
 #include <QObject>
 #include <QDir>
 
-#include <plugins/importer_interface.h>
+#include <core/plugins/importer_interface.h>
+#include <core/plugins/exporter_interface.h>
 
 class PluginLoader : public QObject
 {
@@ -17,10 +18,16 @@ public:
     }
 
     QList<ImporterInterface*> *loadImporters();
+    QList<ExporterInterface*> *loadExporters();
 
     QList<ImporterInterface*> *getImporters()
     {
         return importers;
+    }
+
+    QList<ExporterInterface*> *getExporters()
+    {
+        return exporters;
     }
 
 private:
@@ -32,6 +39,7 @@ private:
     void loadPluginsFromDirectory(QString directory, QList<T*> *container);
 
     QList<ImporterInterface*> *importers;
+    QList<ExporterInterface*> *exporters;
 };
 
 #endif

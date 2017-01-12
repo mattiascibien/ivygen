@@ -1,7 +1,7 @@
 #ifndef OBJIMPORTER_H
 #define OBJIMPORTER_H
 
-#include <plugins/importer_interface.h>
+#include <core/plugins/importer_interface.h>
 
 
 class ObjImporter : public QObject,

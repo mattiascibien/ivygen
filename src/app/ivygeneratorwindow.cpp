@@ -20,9 +20,8 @@
 
 
 #include "ivygeneratorwindow.h"
-#include <Common.h>
-#include <model_loader.h>
-#include <obj_writer.h>
+#include "common.h"
+#include <core/model_loader.h>
 
 #include "aboutdialog.h"
 #include "settingsdialog.h"
@@ -164,7 +163,8 @@ void IvyGeneratorWindow::onImportObj()
 
 void IvyGeneratorWindow::onExportObj()
 {
-    QString fileString = QFileDialog::getSaveFileName(this, "Save Ivy Object", Configuration::getInstance().getExportPath(), "Wavefront Obj (*.obj)");
+    QString fileString = QFileDialog::getSaveFileName(this, "Save Ivy Object", Configuration::getInstance().getExportPath(),
+                                                      ModelLoader::exportFilter());
 
     if (fileString != "")
     {
@@ -172,10 +172,9 @@ void IvyGeneratorWindow::onExportObj()
 
         QString path = fileInfo.path() + "/";
 
-        QString file = fileInfo.completeBaseName() + ".obj";
+        QString file = fileInfo.fileName();
 
-
-        OBJWriter::writeOBJ( path.toStdString(), file.toStdString(), Common::ivy );
+        ModelLoader::save( path.toStdString(), file.toStdString(), Common::ivy );
     }
 }
 

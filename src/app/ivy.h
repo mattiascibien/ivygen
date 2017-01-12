@@ -22,8 +22,8 @@
 #ifndef IVY_H
 #define IVY_H
 
-#include <Vector3d.h>
-#include <basic_mesh.h>
+#include <core/vector3d.h>
+#include <core/basic_mesh.h>
 #include <vector>
 
 
@@ -32,7 +32,7 @@ class IvyNode
 {
 public:
 
-    IvyNode() : length(0.0f), floatingLength(0.0f), climb(false) {};
+    IvyNode() : length(0.0f), floatingLength(0.0f), climb(false) {}
 
 	/** node position */
 	Vector3d pos;			

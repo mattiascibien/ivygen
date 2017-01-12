@@ -87,10 +87,10 @@
       </sizepolicy>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Panel</enum>
+      <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QFormLayout" name="formLayout_2">
@@ -173,6 +173,11 @@
           <attribute name="title">
            <string>Exporters</string>
           </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QListWidget" name="exportersListWidget"/>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
