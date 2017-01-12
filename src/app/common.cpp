@@ -19,46 +19,19 @@
 ***************************************************************************************/
 
 
-#ifndef COMMON_H
-#define COMMON_H
+#include "common.h"
 
 
-#include <basic_mesh.h>
-#include <Camera.h>
-#include "Ivy.h"
-#include "render_widget.h"
-#include "setup_widget.h"
-#include "birth_widget.h"
+BasicMesh Common::mesh;
 
+Camera Common::camera;
 
-/** general class for global object and attributes */
-class Common
-{
+Ivy Common::ivy;
 
-public:
+RenderWidget *Common::renderWidget = NULL;
 
-	/** the scene mesh that the ivy could climb */
-	static BasicMesh mesh;
+SetupWidget *Common::setupWidget = NULL;
+	
+BirthWidget *Common::birthWidget = NULL;
 
-	/** the general camera */
-	static Camera camera;
-
-	/** the ivy object, derived from BasicMesh */
-	static Ivy ivy;
-
-	/** the opengl rendering widget */
-	static RenderWidget *renderWidget;
-
-    /** the grow widget right-hand */
-	static SetupWidget *setupWidget;
-
-    /** the birth widget right-hand */
-    static BirthWidget *birthWidget;
-
-    static QTimer *timer;
-};
-
-
-#endif
-
-
+QTimer *Common::timer = NULL;

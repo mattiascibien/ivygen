@@ -22,8 +22,8 @@
 #ifndef BASICMESH_H
 #define BASICMESH_H
 
-#include "Vector3d.h"
-#include "Vector2d.h"
+#include "vector3d.h"
+#include "vector2d.h"
 #include <vector>
 #include <string>
 

@@ -7,8 +7,8 @@ set(app_SOURCES
         settingsdialog.cpp
         setup_widget.cpp
         render_widget.cpp
-        Ivy.cpp
-        Common.cpp
+        ivy.cpp
+        common.cpp
         configuration.cpp
         plugin_loader.cpp
         main.cpp

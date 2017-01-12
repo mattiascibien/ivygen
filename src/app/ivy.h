@@ -22,7 +22,7 @@
 #ifndef IVY_H
 #define IVY_H
 
-#include <Vector3d.h>
+#include <vector3d.h>
 #include <basic_mesh.h>
 #include <vector>
 

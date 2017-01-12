@@ -20,7 +20,7 @@
 
 
 #include "ivygeneratorwindow.h"
-#include <Common.h>
+#include <common.h>
 #include <model_loader.h>
 #include <obj_writer.h>
 

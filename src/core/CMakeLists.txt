@@ -1,7 +1,7 @@
 set(core_SOURCES 
         plugins/importer_interface.h
         basic_mesh.cpp
-	Camera.cpp
+        camera.cpp
         model_loader.cpp
         obj_writer.cpp)
 
