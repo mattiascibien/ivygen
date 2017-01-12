@@ -29,9 +29,6 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
     QPixmap pixmap(":/resources/images/splash.png");
-    QSplashScreen splash(pixmap);
-    splash.show();
-    application.processEvents();
 
     application.setStyle(QStyleFactory::create("Fusion"));
 
@@ -53,16 +50,18 @@ int main(int argc, char *argv[])
     
     application.setPalette(darkPalette);
 
+    QSplashScreen splash(pixmap);
+    splash.show();
+    application.processEvents();
+
     application.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
+    splash.showMessage("Loading importer plugins...", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
     application.processEvents();
-
-    splash.showMessage("Loading importer plugins...");
     ModelLoader::initializeImporters(PluginLoader::getInstance().loadImporters());
 
+    splash.showMessage("Done loading.", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
     application.processEvents();
-    splash.showMessage("Done loading.");
-
 
     IvyGeneratorWindow ivyGenerator;
     ivyGenerator.show();
