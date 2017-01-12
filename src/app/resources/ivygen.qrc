@@ -7,5 +7,6 @@
         <file>images/document-export.svg</file>
         <file>images/document-import.svg</file>
         <file>images/help-about.svg</file>
+        <file>images/splash.png</file>
     </qresource>
 </RCC>
