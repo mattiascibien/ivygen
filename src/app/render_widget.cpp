@@ -20,7 +20,7 @@
 
 
 #include "render_widget.h"
-#include "Common.h"
+#include "common.h"
 #include <limits>
 
 #ifdef __APPLE__
