@@ -23,8 +23,8 @@
 #define COMMON_H
 
 
-#include <basic_mesh.h>
-#include <camera.h>
+#include <core/basic_mesh.h>
+#include <core/camera.h>
 #include "ivy.h"
 #include "render_widget.h"
 #include "setup_widget.h"

@@ -20,9 +20,9 @@
 
 
 #include "ivygeneratorwindow.h"
-#include <common.h>
-#include <model_loader.h>
-#include <obj_writer.h>
+#include "common.h"
+#include <core/model_loader.h>
+#include <core/obj_writer.h>
 
 #include "aboutdialog.h"
 #include "settingsdialog.h"

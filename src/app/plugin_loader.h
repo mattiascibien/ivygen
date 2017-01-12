@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDir>
 
-#include <plugins/importer_interface.h>
+#include <core/plugins/importer_interface.h>
 
 class PluginLoader : public QObject
 {

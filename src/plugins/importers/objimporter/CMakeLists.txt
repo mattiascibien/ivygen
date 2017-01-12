@@ -12,7 +12,7 @@ set(objimporter_SOURCES
 
 add_library(objimporter SHARED ${objimporter_SOURCES})
 
-target_include_directories(objimporter PRIVATE ../../../core)
+target_include_directories(objimporter PRIVATE ../../../)
 target_link_libraries(objimporter core Qt5::Core ${OPENGL_LIBRARIES})
 
 

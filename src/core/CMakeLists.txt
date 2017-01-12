@@ -13,7 +13,7 @@ target_link_libraries(core Qt5::Core Qt5::OpenGL ${OPENGL_LIBRARIES})
 
 
 # Should not use this
-target_include_directories(core PRIVATE ${Qt5Core_INCLUDE_DIRS})
+target_include_directories(core PRIVATE .. ${Qt5Core_INCLUDE_DIRS})
 qt5_use_modules(core Core)
 qt5_use_modules(core OpenGL)
 
