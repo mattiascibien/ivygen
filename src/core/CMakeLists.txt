@@ -1,5 +1,6 @@
 set(core_SOURCES 
         plugins/importer_interface.h
+        plugins/exporter_interface.h
         basic_mesh.cpp
         camera.cpp
         model_loader.cpp
