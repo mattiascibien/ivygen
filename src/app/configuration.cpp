@@ -35,7 +35,7 @@ void Configuration::setImportPath(QString path)
 
 QColor Configuration::getClearColor()
 {
-    return settings.value("Rendering/clear_color", QColor(Qt::white)).value<QColor>();
+    return settings.value("Rendering/clear_color", QColor(53,53,53)).value<QColor>();
 }
 
 QColor Configuration::getGridColor()

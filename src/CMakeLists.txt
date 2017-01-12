@@ -9,16 +9,16 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(OpenGL)
+find_package(OpenGL REQUIRED)
 
 # Find the QtCore library
-find_package(Qt5Core)
+find_package(Qt5Core REQUIRED)
 
 # Find the QtCore library
-find_package(Qt5OpenGL)
+find_package(Qt5OpenGL REQUIRED)
 
 # Find the QtWidgets library
-find_package(Qt5Widgets)
+find_package(Qt5Widgets REQUIRED)
 
 add_subdirectory (core)
 add_subdirectory (app)
