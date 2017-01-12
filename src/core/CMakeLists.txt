@@ -3,8 +3,7 @@ set(core_SOURCES
         plugins/exporter_interface.h
         basic_mesh.cpp
         camera.cpp
-        model_loader.cpp
-        obj_writer.cpp)
+        model_loader.cpp)
 
 add_library(core SHARED ${core_SOURCES})
 

@@ -59,4 +59,11 @@ void SettingsDialog::populatePlugins()
     {
         ui->importersListWidget->addItem(importer->getName());
     }
+
+    QList<ExporterInterface*> *exporters = PluginLoader::getInstance().getExporters();
+
+    for(ExporterInterface* exporter : *exporters)
+    {
+        ui->exportersListWidget->addItem(exporter->getName());
+    }
 }

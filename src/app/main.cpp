@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
     splash.showMessage("Loading importer plugins...", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
     application.processEvents();
     ModelLoader::initializeImporters(PluginLoader::getInstance().loadImporters());
+    ModelLoader::initializeExporters(PluginLoader::getInstance().loadExporters());
 
     splash.showMessage("Done loading.", Qt::AlignBottom | Qt::AlignLeft, Qt::white);
     application.processEvents();
