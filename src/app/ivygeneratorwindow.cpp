@@ -23,14 +23,14 @@
 #include "common.h"
 #include <core/model_loader.h>
 
-#include "aboutdialog.h"
-#include "settingsdialog.h"
+#include "ui/aboutdialog.h"
+#include "ui/settingsdialog.h"
 
 #include "configuration.h"
 
 IvyGeneratorWindow::IvyGeneratorWindow(QWidget *parent) : QMainWindow(parent)
 {
-	setGeometry(100, 100, 1024, 768);
+    setGeometry(100, 100, 1024, 768);
 
     setWindowTitle("IvyGenerator"); //  - Copyright (c) 2007 Thomas Luft");
 

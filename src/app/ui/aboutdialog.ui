@@ -73,7 +73,7 @@
    <item row="3" column="2">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Copyright (c) 2015 Mattias cibien</string>
+      <string>Copyright (c) 2015-2017 Mattias cibien</string>
      </property>
     </widget>
    </item>

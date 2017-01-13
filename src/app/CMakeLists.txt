@@ -1,12 +1,12 @@
 set(app_SOURCES
         ivygeneratorwindow.cpp
-        aboutdialog.cpp
-        birth_widget.cpp
-        colorpickerwidget.cpp
-        pathedit.cpp
-        settingsdialog.cpp
-        setup_widget.cpp
-        render_widget.cpp
+        ui/aboutdialog.cpp
+        ui/widgets/birth_widget.cpp
+        ui/widgets/colorpickerwidget.cpp
+        ui/widgets/pathedit.cpp
+        ui/settingsdialog.cpp
+        ui/widgets/setup_widget.cpp
+        ui/widgets/render_widget.cpp
         ivy.cpp
         common.cpp
         configuration.cpp
@@ -14,10 +14,10 @@ set(app_SOURCES
         main.cpp
         resources/ivygen.qrc
         resources/ivygen.rc
-        aboutdialog.ui
-        colorpickerwidget.ui
-        pathedit.ui
-        settingsdialog.ui
+        ui/aboutdialog.ui
+        ui/widgets/colorpickerwidget.ui
+        ui/widgets/pathedit.ui
+        ui/settingsdialog.ui
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${app_SOURCES})

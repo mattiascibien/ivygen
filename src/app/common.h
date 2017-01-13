@@ -26,9 +26,9 @@
 #include <core/basic_mesh.h>
 #include <core/camera.h>
 #include "ivy.h"
-#include "render_widget.h"
-#include "setup_widget.h"
-#include "birth_widget.h"
+#include "ui/widgets/render_widget.h"
+#include "ui/widgets/setup_widget.h"
+#include "ui/widgets/birth_widget.h"
 
 
 /** general class for global object and attributes */
