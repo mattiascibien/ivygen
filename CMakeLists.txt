@@ -32,6 +32,11 @@ ENDIF(MSVC)
 
 add_subdirectory (src)
 
+if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
+	include(WinDeployQt)
+	WinDeployQt(TARGET ${CMAKE_PROJECT_NAME} COMPILER_RUNTIME INCLUDE_MODULES ${QTLIBS})
+endif()
+
 install (DIRECTORY data/ DESTINATION data/)
 install (DIRECTORY textures/ DESTINATION textures/)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/bin/ DESTINATION bin/)
