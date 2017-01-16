@@ -54,7 +54,7 @@ after_build:
   - cpack -G NSIS -C Release
   
 artifacts:
-  - path: '**\*%suffix%-.exe'
+  - path: '**\*%name%-.exe'
   - path: '**\*.zip'
 
   
