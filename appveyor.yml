@@ -56,5 +56,3 @@ after_build:
 artifacts:
   - path: '*.exe'
   - path: '*.zip'
-  
-  
