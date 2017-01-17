@@ -57,15 +57,4 @@ artifacts:
   - path: 'build-release\*-%name%.exe'
   - path: 'build-release\*-%name%.zip'
 
-deploy:
-  - provider: BinTray
-    username: mattiascibien
-    api_key:
-      secure: E85Hz24JAc0QXZB9jnhX7kWO2qmlfF7/nbR1lOABJRmBgrVPD/q35CqjLECwt0+2
-    subject: mattiascibien
-    repo: Ivygen
-    package: development
-    publish: true
-    on:
-      branch: develop
-
+  
