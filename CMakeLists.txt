@@ -5,9 +5,13 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 include(GetGitRevisionDescription)
 
-if(NOT DEFINED ${VERSION})
+SET(CI_VERSION "none" CACHE STRING "Version from CI")
+
+if(${CI_VERSION} STREQUAL "none")
     message(STATUS "Version is being calculated by cmake")
     git_describe(VERSION --tags)
+else()
+    set(VERSION ${CI_VERSION})
 endif()
 
 message(STATUS "Building version = " ${VERSION})
