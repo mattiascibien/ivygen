@@ -1,9 +1,11 @@
 language: cpp
+dist: trusty
 
 sudo: false
 
 os:
     - osx
+    - linux
 
 compiler: gcc
 
@@ -17,6 +19,7 @@ script:
     - cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ .
     - make
     - make install
+    - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then cmake -G DEB -C Release
 
 env:
   global:
@@ -25,14 +28,6 @@ env:
    - secure: "GXh1fTaMgGL2HKKRtPQ9BICrrk9UPV0Ho5QEhW4UNd3qn1UIJ1wIxTt/pX/3uYzwoQQr4aV/VVS1L3trk9Nv6658NHsrr8JeN/5xTgi4xjiyEmLA+1oXpmsD+7PatM9P7wNP7w2Ucy0dF2E6V2esZvghrEobyk1asF5siAgwXRc="
 
 addons:
-  coverity_scan:
-    project:
-      name: "mattiascibien/ivygen"
-      description: "<Your project description here>"
-    notification_email: mattias@mattiascibien.net
-    build_command_prepend: "cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ ."
-    build_command:   "make"
-    branch_pattern: coverity_scan
   apt:
     sources:
       - ubuntu-sdk-team
