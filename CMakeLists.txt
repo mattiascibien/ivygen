@@ -4,7 +4,16 @@ project (IvyGen)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 include(GetGitRevisionDescription)
-git_describe(VERSION --tags)
+
+if(DEFINED $ENV{APPVEYOR_BUILD_VERSION})
+    message(STATUS "Using appveyor version = " $ENV{APPVEYOR_BUILD_VERSION})
+    set(VERSION $ENV{APPVEYOR_BUILD_VERSION})
+else()
+    git_describe(VERSION --tags)
+    message(STATUS "Using local version = " ${VERSION})
+endif()
+
+
 
 
 #parse the version information into pieces.
