@@ -5,14 +5,12 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 include(GetGitRevisionDescription)
 
-if(DEFINED $ENV{GitVersion_SemVer})
-    message(STATUS "Using appveyor version = " $ENV{GitVersion_SemVer})
-    set(VERSION $ENV{GitVersion_SemVer})
-else()
+if(NOT DEFINED ${VERSION})
+    message(STATUS "Version is being calculated by cmake")
     git_describe(VERSION --tags)
-    message(STATUS "Using local version = " ${VERSION})
 endif()
 
+message(STATUS "Building version = " ${VERSION})
 
 
 
