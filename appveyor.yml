@@ -36,18 +36,25 @@ build_script:
   # Workaround for CMake not wanting sh.exe on PATH for MinGW
   - if %suffix%==mingw set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
   - if %suffix%==mingw set PATH=C:\Qt\Tools\mingw492_32\bin;%PATH%
+  - set PATH=C:\Program Files (x86)\NSIS;%PATH%
   - cd build-release
   - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install"
   - if not %suffix%==mingw (nmake) else (mingw32-make)
   - if not %suffix%==mingw (nmake install) else (mingw32-make install)
 
 after_build:
-  - cd c:\dev\install\bin
-  - windeployqt IvyGen.exe
-  - cd c:\dev\install
-  - set buildname=%APPVEYOR_BUILD_VERSION%
-  - 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures plugins
-  - cd c:\dev\ivygen
+  #- cd c:\dev\install\bin
+  #- windeployqt IvyGen.exe
+  #- cd c:\dev\install
+  #- set buildname=%APPVEYOR_BUILD_VERSION%
+  #- 7z a ..\ivygen\ivygen_%buildname%_%name%_%suffix%.7z bin lib data textures plugins
+  #- cd c:\dev\ivygen
+  #- if not %suffix%==mingw (nmake package) else (mingw32-make package)
+  - cpack -G ZIP -C Release
+  - cpack -G NSIS -C Release
   
 artifacts:
-  - path: '*.7z'
+  - path: 'build-release\*-%name%.exe'
+  - path: 'build-release\*-%name%.zip'
+
+  
