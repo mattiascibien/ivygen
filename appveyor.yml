@@ -38,7 +38,7 @@ build_script:
   - if %suffix%==mingw set PATH=C:\Qt\Tools\mingw492_32\bin;%PATH%
   - set PATH=C:\Program Files (x86)\NSIS;%PATH%
   - cd build-release
-  - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" -DCI_VERSION=:STRING=%APPVEYOR_BUILD_VERSION%
+  - cmake .. -G %makefiles% -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="c:/dev/install" -DCI_VERSION=%APPVEYOR_BUILD_VERSION%
   - if not %suffix%==mingw (nmake) else (mingw32-make)
   - if not %suffix%==mingw (nmake install) else (mingw32-make install)
 
