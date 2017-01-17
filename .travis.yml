@@ -19,7 +19,7 @@ script:
     - cmake -DCMAKE_INSTALL_PREFIX:PATH=ci_dist/ .
     - make
     - make install
-    - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then cmake -G DEB -C Release
+    - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then cmake -G DEB -C Release; fi
 
 addons:
   apt:
