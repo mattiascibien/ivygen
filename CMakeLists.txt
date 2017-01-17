@@ -4,7 +4,18 @@ project (IvyGen)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 include(GetGitRevisionDescription)
-git_describe(VERSION --tags)
+
+SET(CI_VERSION "none" CACHE STRING "Version from CI")
+
+if(${CI_VERSION} STREQUAL "none")
+    message(STATUS "Version is being calculated by cmake")
+    git_describe(VERSION --tags)
+else()
+    set(VERSION ${CI_VERSION})
+endif()
+
+message(STATUS "Building version = " ${VERSION})
+
 
 
 #parse the version information into pieces.
@@ -32,8 +43,20 @@ ENDIF(MSVC)
 
 add_subdirectory (src)
 
+if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
+	include(WinDeployQt)
+	WinDeployQt(TARGET ${CMAKE_PROJECT_NAME} COMPILER_RUNTIME INCLUDE_MODULES ${QTLIBS})
+	install(DIRECTORY ${PROJECT_BINARY_DIR}/windeployqt/ DESTINATION bin/)
+endif()
+
 install (DIRECTORY data/ DESTINATION data/)
 install (DIRECTORY textures/ DESTINATION textures/)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/bin/ DESTINATION bin/)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/lib/ DESTINATION lib/)
 install (DIRECTORY ${CMAKE_BINARY_DIR}/plugins/ DESTINATION plugins/)
+
+set (CPACK_PACKAGE_VENDOR "Mattias Cibien")
+set (CPACK_PACKAGE_VERSION_MAJOR ${VERSION_MAJOR})
+set (CPACK_PACKAGE_VERSION_MINOR ${VERSION_MINOR})
+set (CPACK_PACKAGE_VERSION_PATCH ${VERSION_PATCH})
+include(CPack)
