@@ -9,7 +9,7 @@
  
 ### Windows
 
-The main tested compilers are GCC under [MinGW-w64](http://mingw-w64.org/) and [Visual Studio 2013](https://www.visualstudio.com/). 
+The main tested compilers are GCC under [MinGW-w64](http://mingw-w64.org/) and [Visual Studio 2015](https://www.visualstudio.com/). 
 
 #### Compiling under MSYS2
 
@@ -23,10 +23,10 @@ For a complete building environment under MSYS2 we suggest to install the follow
  
 Once these requirements are satisfied you can safely build IvyGen.
 
-#### Compiling under Visual Studio 2013
+#### Compiling under Visual Studio 2015
 
-In order to get an environment for Visual Studio 2013 you can install CMake from the official website and Qt using [Qt Installer](http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe). 
-Be sure to select the Qt version compiled for Visual Studio 2013.
+In order to get an environment for Visual Studio 2015 you can install CMake from the official website and Qt using [Qt Installer](http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe). 
+Be sure to select the Qt version compiled for Visual Studio 2015.
 
 ### MacOS Compilers
 
