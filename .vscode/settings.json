@@ -1,0 +1,7 @@
+{
+    "cmake.cmakePath": "C:\\msys64\\mingw64\\bin\\cmake.exe",
+    "cmake.generator": "MinGW Makefiles",
+    "cmake.environment": {
+        "PATH": "C:\\msys64\\mingw64\\bin\\"
+    }
+}
